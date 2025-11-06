@@ -45,33 +45,33 @@ export function ChatHeader({ onToggleSidebar, userName = "User", userAvatar }: C
   };
 
   return (
-    <header className="h-16 border-b border-border bg-background flex items-center justify-between px-4">
-      <div className="flex items-center gap-4">
+    <header className="h-14 sm:h-16 border-b border-border bg-background flex items-center justify-between px-3 sm:px-4 flex-shrink-0">
+      <div className="flex items-center gap-2 sm:gap-4">
         <Button
           variant="ghost"
           size="icon"
           onClick={onToggleSidebar}
-          className="text-foreground"
+          className="text-foreground h-8 w-8 sm:h-10 sm:w-10"
         >
-          <Menu className="w-5 h-5" />
+          <Menu className="w-4 h-4 sm:w-5 sm:h-5" />
         </Button>
-        <h1 className="text-xl font-semibold text-foreground">AskVerse</h1>
+        <h1 className="text-lg sm:text-xl font-semibold text-foreground">AskVerse</h1>
       </div>
 
-      <div className="flex items-center gap-2">
+      <div className="flex items-center gap-1 sm:gap-2">
         <Button
           variant="ghost"
           size="icon"
           onClick={handleShare}
-          className="text-foreground"
+          className="text-foreground h-8 w-8 sm:h-10 sm:w-10 hidden sm:flex"
         >
-          <Share2 className="w-5 h-5" />
+          <Share2 className="w-4 h-4 sm:w-5 sm:h-5" />
         </Button>
 
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button variant="ghost" size="icon" className="text-foreground">
-              <MoreVertical className="w-5 h-5" />
+            <Button variant="ghost" size="icon" className="text-foreground h-8 w-8 sm:h-10 sm:w-10 hidden sm:flex">
+              <MoreVertical className="w-4 h-4 sm:w-5 sm:h-5" />
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end" className="w-48">
@@ -103,10 +103,10 @@ export function ChatHeader({ onToggleSidebar, userName = "User", userAvatar }: C
 
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button variant="ghost" size="icon">
-              <Avatar className="w-8 h-8">
+            <Button variant="ghost" size="icon" className="h-8 w-8 sm:h-10 sm:w-10">
+              <Avatar className="w-7 h-7 sm:w-8 sm:h-8">
                 <AvatarImage src={userAvatar} alt={userName} />
-                <AvatarFallback>{userName.charAt(0).toUpperCase()}</AvatarFallback>
+                <AvatarFallback className="text-xs sm:text-sm">{userName.charAt(0).toUpperCase()}</AvatarFallback>
               </Avatar>
             </Button>
           </DropdownMenuTrigger>

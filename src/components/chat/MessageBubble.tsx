@@ -61,29 +61,29 @@ export function MessageBubble({ message }: MessageBubbleProps) {
   return (
     <div
       className={cn(
-        "flex gap-4 p-6 transition-colors",
+        "flex gap-3 sm:gap-4 p-4 sm:p-6 transition-colors",
         isUser ? "bg-background flex-row-reverse" : "bg-muted/30"
       )}
     >
       <div className={cn(
-        "flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center",
+        "flex-shrink-0 w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center",
         isUser ? "bg-chat-user text-primary-foreground" : "bg-chat-assistant text-foreground"
       )}>
-        {isUser ? <User className="w-5 h-5" /> : <Bot className="w-5 h-5" />}
+        {isUser ? <User className="w-4 h-4 sm:w-5 sm:h-5" /> : <Bot className="w-4 h-4 sm:w-5 sm:h-5" />}
       </div>
 
-      <div className={cn("flex-1 space-y-2", isUser && "flex flex-col items-end")}>
+      <div className={cn("flex-1 space-y-2 min-w-0", isUser && "flex flex-col items-end")}>
         <div className="flex items-center gap-2">
-          <span className="font-semibold text-foreground text-[15px]">
+          <span className="font-semibold text-foreground text-sm sm:text-[15px]">
             {isUser ? 'You' : 'AskVerse'}
           </span>
-          <span className="text-xs text-muted-foreground font-normal">
+          <span className="text-[10px] sm:text-xs text-muted-foreground font-normal">
             {message.timestamp.toLocaleTimeString()}
           </span>
         </div>
 
         <div className={cn(
-          "text-foreground leading-relaxed text-[15px] font-normal",
+          "text-foreground leading-relaxed text-sm sm:text-[15px] font-normal",
           isUser && "text-right whitespace-pre-wrap",
           !isUser && "prose prose-sm max-w-none dark:prose-invert"
         )}>

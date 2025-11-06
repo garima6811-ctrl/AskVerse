@@ -26,13 +26,13 @@ export function ChatArea({ messages, isLoading }: ChatAreaProps) {
             <MessageBubble key={message.id} message={message} />
           ))}
           {isLoading && (
-            <div className="flex gap-4 p-6 bg-muted/30">
-              <div className="flex-shrink-0 w-8 h-8 rounded-full bg-chat-assistant flex items-center justify-center">
-                <Loader2 className="w-5 h-5 animate-spin" />
+            <div className="flex gap-3 sm:gap-4 p-4 sm:p-6 bg-muted/30">
+              <div className="flex-shrink-0 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-chat-assistant flex items-center justify-center">
+                <Loader2 className="w-4 h-4 sm:w-5 sm:h-5 animate-spin" />
               </div>
               <div className="flex-1">
-                <span className="font-semibold text-foreground">AskVerse</span>
-                <div className="mt-2 text-muted-foreground">Thinking...</div>
+                <span className="font-semibold text-foreground text-sm sm:text-[15px]">AskVerse</span>
+                <div className="mt-2 text-muted-foreground text-sm sm:text-[15px]">Thinking...</div>
               </div>
             </div>
           )}

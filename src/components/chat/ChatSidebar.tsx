@@ -165,14 +165,14 @@ export function ChatSidebar({
     <>
       <div
         className={cn(
-          "border-r border-border bg-background flex flex-col transition-all duration-300",
-          collapsed ? "w-16" : "w-60"
+          "border-r border-border bg-background flex flex-col transition-all duration-300 h-full",
+          collapsed ? "w-0 md:w-16" : "w-64 md:w-72"
         )}
       >
-        <div className="p-4 border-b border-border">
+        <div className="p-3 sm:p-4 border-b border-border">
           <Button
             onClick={onNewConversation}
-            className="w-full"
+            className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
             size={collapsed ? "icon" : "default"}
           >
             <Plus className="w-4 h-4" />
@@ -280,12 +280,12 @@ export function ChatSidebar({
           </div>
         </ScrollArea>
 
-        <div className="border-t border-border p-4">
+        <div className="border-t border-border p-3 sm:p-4">
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center">
-              <User className="w-4 h-4 text-primary-foreground" />
+            <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-primary flex items-center justify-center flex-shrink-0">
+              <User className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-primary-foreground" />
             </div>
-            {!collapsed && <span className="text-sm font-medium truncate">{userName}</span>}
+            {!collapsed && <span className="text-xs sm:text-sm font-medium truncate">{userName}</span>}
           </div>
         </div>
       </div>

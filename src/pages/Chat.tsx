@@ -6,6 +6,7 @@ import { ChatInput } from "@/components/chat/ChatInput";
 import { TagSelector } from "@/components/chat/TagSelector";
 import { useChat } from "@/hooks/useChat";
 import { useAuth } from "@/contexts/AuthContext";
+import { cn } from "@/lib/utils";
 
 const AVAILABLE_TAGS = [
   "Legal",
@@ -76,33 +77,46 @@ export default function Chat() {
     <div className="h-screen w-full flex flex-col bg-background">
       <ChatHeader
         onToggleSidebar={() => setSidebarCollapsed(!sidebarCollapsed)}
-        userName={user?.name || "User"}
+        userName={user?.name?.match(/^[A-Za-z]+/)?.[0] || user?.name || "User"}
       />
       
-      <div className="flex-1 flex overflow-hidden">
-        <ChatSidebar
-          conversations={conversations}
-          folders={folders}
-          activeConversationId={activeConversationId}
-          onSelectConversation={setActiveConversationId}
-          onNewConversation={createConversation}
-          onDeleteConversation={deleteConversation}
-          onRenameConversation={renameConversation}
-          onMoveConversation={moveConversation}
-          onCreateFolder={createFolder}
-          onDeleteFolder={deleteFolder}
-          onRenameFolder={renameFolder}
-          collapsed={sidebarCollapsed}
-          userName={user?.name || "User"}
-        />
+      <div className="flex-1 flex overflow-hidden relative">
+        {/* Mobile Overlay for sidebar */}
+        {!sidebarCollapsed && (
+          <div 
+            className="fixed inset-0 bg-black/50 z-10 md:hidden"
+            onClick={() => setSidebarCollapsed(true)}
+          />
+        )}
+        
+        <div className={cn(
+          "absolute md:relative h-full z-20 transition-transform duration-300",
+          sidebarCollapsed ? "-translate-x-full md:translate-x-0" : "translate-x-0"
+        )}>
+          <ChatSidebar
+            conversations={conversations}
+            folders={folders}
+            activeConversationId={activeConversationId}
+            onSelectConversation={setActiveConversationId}
+            onNewConversation={createConversation}
+            onDeleteConversation={deleteConversation}
+            onRenameConversation={renameConversation}
+            onMoveConversation={moveConversation}
+            onCreateFolder={createFolder}
+            onDeleteFolder={deleteFolder}
+            onRenameFolder={renameFolder}
+            collapsed={sidebarCollapsed}
+            userName={user?.name?.match(/^[A-Za-z]+/)?.[0] || user?.name || "User"}
+          />
+        </div>
         
         <div className="flex-1 flex flex-col">
           {(!activeConversation || activeConversation.messages.length === 0) ? (
-            <div className="flex-1 flex flex-col items-center justify-center px-6 py-12">
-              <div className="w-full max-w-4xl space-y-8">
-                <div className="text-center space-y-2 mb-12">
-                  <h1 className="text-5xl font-display font-medium text-foreground tracking-tight leading-tight">
-                    Hi, {user?.name?.split(' ')[0] || "User"}! How can we help?
+            <div className="flex-1 flex flex-col items-center justify-center px-4 sm:px-6 py-8 sm:py-12">
+              <div className="w-full max-w-4xl space-y-6 sm:space-y-8">
+                <div className="text-center space-y-2 mb-8 sm:mb-12">
+                  <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-foreground tracking-tight leading-tight">
+                    Hi, {user?.name?.match(/^[A-Za-z]+/)?.[0] || user?.name?.split(' ')[0] || "User"}! How can we help?
                   </h1>
                 </div>
                 
