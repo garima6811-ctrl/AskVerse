@@ -95,4 +95,20 @@ All colors MUST be HSL.
   p {
     @apply font-normal;
   }
+
+  .prose {
+    @apply text-foreground;
+  }
+
+  .prose a {
+    @apply text-primary hover:text-primary/80 underline font-medium;
+  }
+
+  .prose ul {
+    @apply list-disc list-inside space-y-1;
+  }
+
+  .prose li {
+    @apply text-foreground;
+  }
 }

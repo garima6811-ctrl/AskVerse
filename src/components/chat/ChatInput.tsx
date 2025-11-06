@@ -58,18 +58,18 @@ export function ChatInput({ onSendMessage, suggestions, disabled }: ChatInputPro
         </div>
       )}
 
-      <div className="relative bg-background border border-border/60 rounded-2xl shadow-sm hover:shadow-lg hover:border-primary/30 transition-all duration-300 p-4">
+      <div className="relative bg-background border border-border/60 rounded-2xl shadow-sm hover:shadow-md hover:border-primary/30 transition-all duration-200 p-3">
         <Textarea
           value={input}
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={handleKeyDown}
           placeholder="Type your asks…"
           disabled={disabled}
-          className="resize-none min-h-[80px] border-0 bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 text-[15px] font-normal leading-relaxed"
-          rows={2}
+          className="resize-none min-h-[50px] border-0 bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 text-[15px] font-normal leading-relaxed"
+          rows={1}
         />
         
-        <div className="flex items-center justify-between mt-2 pt-3 border-t border-border">
+        <div className="flex items-center justify-between mt-1 pt-2 border-t border-border/40">
           <div className="flex items-center gap-1">
             <SearchOptions
               selectedSources={searchSources}

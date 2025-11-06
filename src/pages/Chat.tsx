@@ -101,8 +101,8 @@ export default function Chat() {
             <div className="flex-1 flex flex-col items-center justify-center px-6 py-12">
               <div className="w-full max-w-4xl space-y-8">
                 <div className="text-center space-y-2 mb-12">
-                  <h1 className="text-4xl font-semibold text-foreground">
-                    Hi, {user?.name || "User"}! How can we help?
+                  <h1 className="text-5xl font-display font-medium text-foreground tracking-tight leading-tight">
+                    Hi, {user?.name?.split(' ')[0] || "User"}! How can we help?
                   </h1>
                 </div>
                 

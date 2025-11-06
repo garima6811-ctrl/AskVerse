@@ -10,7 +10,7 @@ export const trainingData: QAPair[] = [
   // Legal Domain
   {
     question: "What are our GDPR compliance requirements?",
-    answer: "Our GDPR compliance framework requires: (1) Obtaining explicit consent before processing personal data, (2) Maintaining detailed records of all data processing activities, (3) Implementing privacy by design in all systems, (4) Appointing a Data Protection Officer (DPO) for large-scale processing, and (5) Ensuring data breach notification within 72 hours of detection. All employees handling personal data must complete annual GDPR training.",
+    answer: "Our GDPR compliance framework ensures data protection and privacy across all operations.\n\n(1) Obtaining explicit consent before processing personal data\n(2) Maintaining detailed records of all data processing activities\n(3) Implementing privacy by design in all systems\n(4) Appointing a Data Protection Officer (DPO) for large-scale processing\n(5) Ensuring data breach notification within 72 hours of detection\n\nAll employees handling personal data must complete annual GDPR training.\n\nFor more information: https://gdpr.eu/compliance/",
     domain: "Legal",
     keywords: ["gdpr", "compliance", "data protection", "privacy", "consent", "personal data"],
     sourceIds: ["legal-001"]
@@ -33,7 +33,7 @@ export const trainingData: QAPair[] = [
   // Data Processing Domain
   {
     question: "How does our ETL pipeline work?",
-    answer: "Our ETL (Extract, Transform, Load) pipeline follows this workflow: (1) Extract: Data is pulled from CRM, ERP systems, and external APIs, (2) Transform: Data undergoes validation, normalization, deduplication, and enrichment using our workflow engine, (3) Load: Processed data is loaded into target systems supporting JSON, CSV, Parquet, and SQL formats. The pipeline supports both batch processing (scheduled) and real-time streaming modes.",
+    answer: "Our ETL pipeline automates data movement and transformation across systems.\n\n1. Extract: Data is pulled from CRM, ERP systems, and external APIs\n2. Transform: Data undergoes validation, normalization, deduplication, and enrichment\n3. Load: Processed data is loaded into target systems supporting JSON, CSV, Parquet, and SQL formats\n\nThe pipeline supports both batch processing (scheduled) and real-time streaming modes.\n\nLearn more: https://docs.company.com/etl-pipeline",
     domain: "Processing",
     keywords: ["etl", "pipeline", "data processing", "extract", "transform", "load"],
     sourceIds: ["data-001"]
@@ -125,7 +125,7 @@ export const trainingData: QAPair[] = [
   // Security Domain
   {
     question: "What are our security policies?",
-    answer: "Our security framework follows ISO 27001 and NIST standards, requiring: (1) Multi-factor authentication (MFA) for all user accounts, (2) AES-256 encryption at rest and TLS 1.3 for data in transit, (3) Quarterly penetration testing by certified ethical hackers, (4) Annual security awareness training for all employees, (5) 24/7 security monitoring with incident response team, and (6) Annual third-party security audits.",
+    answer: "Our security framework follows ISO 27001 and NIST standards to protect all assets.\n\n1. Multi-factor authentication (MFA) for all user accounts\n2. AES-256 encryption at rest and TLS 1.3 for data in transit\n3. Quarterly penetration testing by certified ethical hackers\n4. Annual security awareness training for all employees\n5. 24/7 security monitoring with incident response team\n6. Annual third-party security audits\n\nRead our full security policy: https://company.com/security",
     domain: "Security",
     keywords: ["security", "policy", "iso 27001", "nist", "compliance"],
     sourceIds: ["sec-001"]

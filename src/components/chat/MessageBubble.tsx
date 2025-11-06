@@ -18,6 +18,39 @@ const getFileIcon = (type: string) => {
   }
 };
 
+const formatAIResponse = (content: string): string => {
+  // Check if content has numbered lists (1., 2., etc.) or dashes/bullets
+  const hasNumberedList = /\(\d+\)|\d+\./gm.test(content);
+  const hasBullets = /^[\s]*[-•]/gm.test(content);
+  
+  if (!hasNumberedList && !hasBullets) {
+    return `<p>${content.replace(/\n/g, '<br/>')}</p>`;
+  }
+  
+  // Split into paragraphs
+  let formatted = content;
+  
+  // Convert numbered lists: (1) or 1. to proper list items
+  formatted = formatted.replace(/\((\d+)\)\s+/g, '<li>');
+  formatted = formatted.replace(/(\d+)\.\s+/g, '<li>');
+  
+  // Wrap consecutive list items in <ul>
+  formatted = formatted.replace(/(<li>.*?)(?=<li>|$)/gs, (match) => {
+    return match;
+  });
+  
+  // Split by double newlines for paragraphs
+  const parts = formatted.split(/\n\n+/);
+  
+  return parts.map(part => {
+    if (part.includes('<li>')) {
+      const items = part.split('<li>').filter(Boolean);
+      return `<ul class="space-y-2 my-3">${items.map(item => `<li class="ml-4">${item.trim()}</li>`).join('')}</ul>`;
+    }
+    return `<p class="mb-3">${part.trim().replace(/\n/g, '<br/>')}</p>`;
+  }).join('');
+};
+
 interface MessageBubbleProps {
   message: Message;
 }
@@ -50,31 +83,36 @@ export function MessageBubble({ message }: MessageBubbleProps) {
         </div>
 
         <div className={cn(
-          "text-foreground whitespace-pre-wrap leading-relaxed text-[15px] font-normal",
-          isUser && "text-right"
+          "text-foreground leading-relaxed text-[15px] font-normal",
+          isUser && "text-right whitespace-pre-wrap",
+          !isUser && "prose prose-sm max-w-none dark:prose-invert"
         )}>
-          {message.content}
+          {isUser ? (
+            message.content
+          ) : (
+            <div dangerouslySetInnerHTML={{ __html: formatAIResponse(message.content) }} />
+          )}
         </div>
 
         {message.sources && message.sources.length > 0 && (
-          <div className="mt-4 p-3 bg-background/50 rounded-lg border border-border w-full">
-            <p className="text-xs font-semibold text-muted-foreground mb-2">Sources:</p>
+          <div className="mt-4 p-4 bg-background/50 rounded-lg border border-border w-full">
+            <p className="text-xs font-semibold text-muted-foreground mb-3">📚 Further Reading:</p>
             <div className="space-y-2">
               {message.sources.map((source, index) => {
                 const Icon = getFileIcon(source.type);
                 return (
-                  <div key={index} className="flex items-start gap-2 text-xs">
+                  <div key={index} className="flex items-start gap-2 text-sm">
                     <Icon className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
                     <div className="flex-1">
                       <a 
                         href={source.url} 
-                        className="text-primary hover:underline font-medium"
+                        className="text-primary hover:text-primary/80 hover:underline font-medium transition-colors"
                         target="_blank"
                         rel="noopener noreferrer"
                       >
                         {source.title}
                       </a>
-                      <span className="text-muted-foreground ml-2">({source.type.toUpperCase()})</span>
+                      <span className="text-muted-foreground text-xs ml-2">({source.type.toUpperCase()})</span>
                     </div>
                   </div>
                 );
