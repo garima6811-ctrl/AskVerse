@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Globe, GraduationCap, Share2, DollarSign } from "lucide-react";
+import { Globe, FolderOpen, Map, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Popover,
@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/popover";
 import { Switch } from "@/components/ui/switch";
 
-export type SearchSource = "web" | "academic" | "social" | "finance";
+export type SearchSource = "web" | "sharepoint" | "atlas" | "linkedin";
 
 interface SearchOptionsProps {
   selectedSources: SearchSource[];
@@ -23,22 +23,22 @@ const searchSources = [
     icon: Globe,
   },
   {
-    id: "academic" as SearchSource,
-    label: "Academic",
-    description: "Search academic papers",
-    icon: GraduationCap,
+    id: "sharepoint" as SearchSource,
+    label: "SharePoint",
+    description: "Search SharePoint documents and files",
+    icon: FolderOpen,
   },
   {
-    id: "social" as SearchSource,
-    label: "Social",
-    description: "Discussions and opinions",
-    icon: Share2,
+    id: "atlas" as SearchSource,
+    label: "Atlas",
+    description: "Search Atlas knowledge base",
+    icon: Map,
   },
   {
-    id: "finance" as SearchSource,
-    label: "Finance",
-    description: "Search SEC filings",
-    icon: DollarSign,
+    id: "linkedin" as SearchSource,
+    label: "LinkedIn",
+    description: "Search LinkedIn profiles and content",
+    icon: Linkedin,
   },
 ];
 
@@ -59,9 +59,9 @@ export function SearchOptions({ selectedSources, onSourcesChange }: SearchOption
         <Button
           variant="ghost"
           size="icon"
-          className="text-muted-foreground hover:text-foreground"
+          className="text-muted-foreground hover:text-foreground h-8 w-8 sm:h-9 sm:w-9"
         >
-          <Globe className="w-5 h-5" />
+          <Globe className="w-4 h-4 sm:w-5 sm:h-5" />
         </Button>
       </PopoverTrigger>
       <PopoverContent className="w-80 bg-popover z-50" align="start">
