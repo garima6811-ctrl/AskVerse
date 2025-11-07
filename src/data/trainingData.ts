@@ -9,25 +9,60 @@ export interface QAPair {
 export const trainingData: QAPair[] = [
   // CASE Domain
   {
-    question: "How do I create a new matter in CASE?",
-    answer: "Creating a new matter in CASE is straightforward.\n\n1. Log in to the CASE platform\n2. Click 'New Matter' in the top navigation\n3. Fill in required fields: matter name, client, matter type, and assigned attorneys\n4. Add optional details like budget, timeline, and custom fields\n5. Click 'Save' to create the matter\n\nOnce created, you can start uploading documents and tracking case activities.",
+    question: "How do I create a new client in CASE?",
+    answer: "Creating a new client in CASE establishes the foundation for all related work.\n\n1. Navigate to Clients > New Client\n2. Enter client name and primary contact information\n3. Add organizational details (industry, size, location)\n4. Set billing preferences and payment terms\n5. Assign account manager and team members\n6. Add custom fields and tags as needed\n7. Click 'Create Client'\n\nOnce created, you can link engagements, projects, and workspaces to this client.",
     domain: "CASE",
-    keywords: ["create matter", "new matter", "case", "matter creation"],
+    keywords: ["create client", "new client", "client creation", "client setup"],
     sourceIds: ["case-001", "case-002"]
   },
   {
-    question: "What document types can I upload to CASE?",
-    answer: "CASE supports a wide variety of document formats including PDFs, Word documents (DOC, DOCX), Excel spreadsheets, PowerPoint presentations, images (JPG, PNG), emails (MSG, EML), and text files. Maximum file size is 500MB per document. Bulk upload is available for multiple documents.",
+    question: "How do I set up an organization in CASE?",
+    answer: "Organizations represent corporate entities and can contain multiple clients.\n\n• Go to Organizations > Create New\n• Enter organization name and corporate structure\n• Add parent/subsidiary relationships if applicable\n• Define organizational hierarchy and reporting lines\n• Link related clients to the organization\n• Set organization-wide preferences and policies\n\nOrganizations help manage complex corporate relationships and consolidated reporting.",
     domain: "CASE",
-    keywords: ["upload", "documents", "file types", "formats"],
+    keywords: ["organization", "create organization", "corporate", "entity"],
     sourceIds: ["case-002"]
   },
   {
+    question: "How do I create an engagement in CASE?",
+    answer: "Engagements represent client relationships and major initiatives.\n\n1. Select the client from Clients list\n2. Click 'New Engagement'\n3. Enter engagement name, type, and description\n4. Set start date, expected duration, and end date\n5. Define engagement scope and objectives\n6. Assign engagement lead and team members\n7. Set budget and resource allocations\n8. Create initial project structure if needed\n\nEngagements serve as containers for related projects and activities.",
+    domain: "CASE",
+    keywords: ["engagement", "create engagement", "new engagement", "client engagement"],
+    sourceIds: ["case-003"]
+  },
+  {
+    question: "How do I set up a project in CASE?",
+    answer: "Projects are specific work streams within client engagements.\n\n1. Navigate to the engagement\n2. Click 'Add Project'\n3. Enter project name, code, and description\n4. Set project timeline and milestones\n5. Assign project manager and team members\n6. Define deliverables and success criteria\n7. Set budget and track expenses\n8. Link to workspace for collaboration\n\nProjects include task management, resource tracking, and progress reporting.",
+    domain: "CASE",
+    keywords: ["project", "create project", "project setup", "project management"],
+    sourceIds: ["case-003"]
+  },
+  {
+    question: "How do I create a workspace in CASE?",
+    answer: "Workspaces provide dedicated collaboration environments for teams.\n\n1. Go to Workspaces > Create New\n2. Enter workspace name and description\n3. Select workspace type (Project, Department, Initiative)\n4. Link to client, engagement, or project if applicable\n5. Add team members and set permissions (Admin, Editor, Viewer)\n6. Configure workspace settings and features\n7. Set up folders and document structure\n8. Enable notifications and integrations\n\nWorkspaces include document sharing, tasks, discussions, and collaboration tools.",
+    domain: "CASE",
+    keywords: ["workspace", "create workspace", "collaboration", "team workspace"],
+    sourceIds: ["case-004"]
+  },
+  {
+    question: "How do I add users to a workspace?",
+    answer: "Adding users to workspaces enables team collaboration. Open the workspace, go to Settings > Members, click 'Add Members', search for users by name or email, select their role (Admin, Editor, or Viewer), and save. Admins have full control, Editors can create and modify content, Viewers have read-only access. Users receive email notifications when added.",
+    domain: "CASE",
+    keywords: ["add users", "workspace members", "team", "permissions"],
+    sourceIds: ["case-004"]
+  },
+  {
+    question: "What's the relationship between clients, engagements, and projects?",
+    answer: "CASE uses a hierarchical structure:\n\n• Clients: Top-level entities representing customer organizations\n• Engagements: Major initiatives or relationships with a client (one client can have multiple engagements)\n• Projects: Specific work streams within an engagement (one engagement can have multiple projects)\n• Workspaces: Collaboration environments that can be linked to any level\n\nThis structure provides organized visibility from high-level client relationships down to specific project tasks.",
+    domain: "CASE",
+    keywords: ["hierarchy", "structure", "relationship", "organization"],
+    sourceIds: ["case-001", "case-002", "case-003"]
+  },
+  {
     question: "How does CASE integrate with other systems?",
-    answer: "CASE integrates with multiple enterprise systems through REST APIs.\n\n• Salesforce integration for client and matter sync\n• SharePoint connection for document management\n• Single sign-on (SSO) for unified authentication\n• Webhook notifications for real-time updates\n• Automated data synchronization on configurable schedules\n\nContact IT for integration setup and API documentation.",
+    answer: "CASE integrates with multiple enterprise systems through REST APIs.\n\n• Salesforce integration for client and engagement sync\n• SharePoint connection for document management\n• Single sign-on (SSO) for unified authentication\n• Webhook notifications for real-time updates\n• Automated data synchronization on configurable schedules\n\nContact IT for integration setup and API documentation.",
     domain: "CASE",
     keywords: ["integration", "api", "salesforce", "sharepoint", "sso"],
-    sourceIds: ["case-003"]
+    sourceIds: ["case-005"]
   },
 
   // CASE Billing Domain

@@ -14,19 +14,35 @@ export const knowledgeBase: KnowledgeSource[] = [
     title: 'CASE Platform Overview',
     type: 'pdf',
     domain: 'CASE',
-    content: 'CASE (Comprehensive Analytics and Support Environment) is our enterprise platform for managing legal and compliance workflows. The platform provides document management, case tracking, matter management, and integrated analytics capabilities.',
+    content: 'CASE (Client and Support Environment) is our enterprise platform for managing clients, organizations, engagements, projects, and workspaces. The platform provides comprehensive client relationship management, project tracking, workspace collaboration, and integrated analytics capabilities.',
     url: '/sharepoint/case/platform-overview.pdf'
   },
   {
     id: 'case-002',
-    title: 'CASE User Guide',
+    title: 'CASE Client and Organization Management',
     type: 'document',
     domain: 'CASE',
-    content: 'Access CASE through the web portal. Key features include: matter creation and tracking, document upload and organization, search and filtering capabilities, reporting dashboards, and collaboration tools. Users can create custom workflows and automate routine tasks.',
-    url: '/sharepoint/case/user-guide.docx'
+    content: 'Create and manage clients and organizations in CASE. Track client relationships, organizational hierarchies, contact information, engagement history, and custom attributes. Link multiple engagements and projects to clients for comprehensive visibility.',
+    url: '/sharepoint/case/client-org-guide.docx'
   },
   {
     id: 'case-003',
+    title: 'CASE Engagement and Project Setup',
+    type: 'pdf',
+    domain: 'CASE',
+    content: 'Engagements represent client relationships and initiatives. Projects are specific work streams within engagements. Set up project timelines, budgets, team assignments, deliverables, and milestones. Track progress and manage resources across multiple projects.',
+    url: '/sharepoint/case/engagement-project-guide.pdf'
+  },
+  {
+    id: 'case-004',
+    title: 'CASE Workspace Collaboration',
+    type: 'document',
+    domain: 'CASE',
+    content: 'Workspaces provide dedicated collaboration environments for teams. Create workspaces for projects, departments, or initiatives. Features include document sharing, task management, discussion threads, and integrated communication tools. Set permissions and access controls per workspace.',
+    url: '/sharepoint/case/workspace-guide.docx'
+  },
+  {
+    id: 'case-005',
     title: 'CASE Integration Guide',
     type: 'pdf',
     domain: 'CASE',
@@ -245,9 +261,10 @@ export const knowledgeBase: KnowledgeSource[] = [
 
 const domainSuggestions: Record<string, string[]> = {
   'CASE': [
-    'How do I create a new matter in CASE?',
-    'What document types can I upload to CASE?',
-    'How do I search for documents in CASE?',
+    'How do I create a new client in CASE?',
+    'How do I set up a project workspace?',
+    'How do I create an engagement?',
+    'How do I add users to a workspace?',
   ],
   'CASE Billing': [
     'How do I generate an invoice in CASE Billing?',
