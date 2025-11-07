@@ -16,15 +16,15 @@ const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 export function AuthProvider({ children }: { children: ReactNode }) {
   const [user, setUser] = useState<User | null>(() => {
-    const savedUser = localStorage.getItem("askverse_user");
+    const savedUser = localStorage.getItem("askallthingsdata_user");
     return savedUser ? JSON.parse(savedUser) : null;
   });
 
   useEffect(() => {
     if (user) {
-      localStorage.setItem("askverse_user", JSON.stringify(user));
+      localStorage.setItem("askallthingsdata_user", JSON.stringify(user));
     } else {
-      localStorage.removeItem("askverse_user");
+      localStorage.removeItem("askallthingsdata_user");
     }
   }, [user]);
 

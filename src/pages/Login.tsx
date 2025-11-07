@@ -55,7 +55,7 @@ export default function Login() {
     <div className="min-h-screen w-full flex items-center justify-center bg-background p-4">
       <Card className="w-full max-w-md">
         <CardHeader className="space-y-1">
-          <CardTitle className="text-2xl font-semibold text-center">Welcome to AskVerse</CardTitle>
+          <CardTitle className="text-2xl font-semibold text-center">Welcome to AskAllThingsData</CardTitle>
           <CardDescription className="text-center">
             Sign in to your account to continue
           </CardDescription>

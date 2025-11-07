@@ -55,7 +55,7 @@ export function ChatHeader({ onToggleSidebar, userName = "User", userAvatar }: C
         >
           <Menu className="w-4 h-4 sm:w-5 sm:h-5" />
         </Button>
-        <h1 className="text-lg sm:text-xl font-semibold text-foreground">AskVerse</h1>
+        <h1 className="text-lg sm:text-xl font-semibold text-foreground">AskAllThingsData</h1>
       </div>
 
       <div className="flex items-center gap-1 sm:gap-2">
