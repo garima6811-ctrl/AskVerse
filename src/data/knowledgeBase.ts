@@ -8,454 +8,331 @@ export interface KnowledgeSource {
 }
 
 export const knowledgeBase: KnowledgeSource[] = [
-  // Legal Domain
+  // CASE Domain
   {
-    id: 'legal-001',
-    title: 'GDPR Compliance Guidelines 2024',
+    id: 'case-001',
+    title: 'CASE Platform Overview',
     type: 'pdf',
-    domain: 'Legal',
-    content: 'Our GDPR compliance framework ensures all personal data is processed lawfully. Key requirements include: obtaining explicit consent, maintaining data processing records, implementing privacy by design, appointing a DPO for organizations processing large-scale sensitive data, and ensuring data breach notification within 72 hours.',
-    url: '/sharepoint/legal/gdpr-guidelines-2024.pdf'
+    domain: 'CASE',
+    content: 'CASE (Comprehensive Analytics and Support Environment) is our enterprise platform for managing legal and compliance workflows. The platform provides document management, case tracking, matter management, and integrated analytics capabilities.',
+    url: '/sharepoint/case/platform-overview.pdf'
   },
   {
-    id: 'legal-002',
-    title: 'Contract Templates & Best Practices',
+    id: 'case-002',
+    title: 'CASE User Guide',
     type: 'document',
-    domain: 'Legal',
-    content: 'Standard contract templates include NDA, SLA, MSA, and DPA agreements. All contracts must include: clear scope of work, payment terms, liability limitations, termination clauses, and dispute resolution mechanisms. Legal review is mandatory for contracts exceeding $50K value.',
-    url: '/sharepoint/legal/contract-templates.docx'
+    domain: 'CASE',
+    content: 'Access CASE through the web portal. Key features include: matter creation and tracking, document upload and organization, search and filtering capabilities, reporting dashboards, and collaboration tools. Users can create custom workflows and automate routine tasks.',
+    url: '/sharepoint/case/user-guide.docx'
   },
   {
-    id: 'legal-003',
-    title: 'Intellectual Property Protection Policy',
+    id: 'case-003',
+    title: 'CASE Integration Guide',
     type: 'pdf',
-    domain: 'Legal',
-    content: 'All company IP including software code, algorithms, databases, and documentation are protected under copyright law. Employees must sign IP assignment agreements. Third-party IP usage requires proper licensing. Patent applications should be filed for novel inventions.',
-    url: '/sharepoint/legal/ip-policy.pdf'
+    domain: 'CASE',
+    content: 'CASE integrates with Salesforce, SharePoint, and other enterprise systems via REST APIs. Supports single sign-on (SSO), automated data synchronization, and webhook notifications for real-time updates.',
+    url: '/sharepoint/case/integration-guide.pdf'
   },
 
-  // Data Processing Domain
+  // CASE Billing Domain
   {
-    id: 'data-001',
-    title: 'Data Processing Architecture Overview',
+    id: 'case-billing-001',
+    title: 'CASE Billing System Guide',
+    type: 'pdf',
+    domain: 'CASE Billing',
+    content: 'CASE Billing handles all invoicing and payment tracking for legal matters. Features include: hourly rate management, expense tracking, invoice generation, payment processing, and financial reporting. Supports multiple billing arrangements including hourly, flat fee, and contingency.',
+    url: '/sharepoint/case-billing/billing-guide.pdf'
+  },
+  {
+    id: 'case-billing-002',
+    title: 'Invoice Generation Process',
+    type: 'document',
+    domain: 'CASE Billing',
+    content: 'Generate invoices monthly or on-demand. The system automatically calculates billable hours, applies approved rates, includes expenses, and generates detailed line-item invoices. Invoices can be customized with client branding and sent via email or exported to PDF.',
+    url: '/sharepoint/case-billing/invoice-process.docx'
+  },
+  {
+    id: 'case-billing-003',
+    title: 'Rate Card Management',
+    type: 'document',
+    domain: 'CASE Billing',
+    content: 'Manage billing rates by attorney level, practice area, and client. Rate cards can include standard rates, discounted rates, and special arrangements. System tracks rate changes over time and applies the correct rate based on work date.',
+    url: '/sharepoint/case-billing/rate-cards.docx'
+  },
+
+  // Finance Domain
+  {
+    id: 'finance-001',
+    title: 'Financial Reporting Standards',
+    type: 'pdf',
+    domain: 'Finance',
+    content: 'Financial reporting follows GAAP standards. Monthly reports include: income statements, balance sheets, cash flow statements, and variance analysis. All reports are reviewed by the finance team and approved by the CFO before distribution.',
+    url: '/sharepoint/finance/reporting-standards.pdf'
+  },
+  {
+    id: 'finance-002',
+    title: 'Budget Planning and Approval',
+    type: 'document',
+    domain: 'Finance',
+    content: 'Annual budget planning begins in Q3. Department heads submit budget requests, finance team consolidates and analyzes, executive team reviews and approves. Quarterly budget reviews track actuals vs. plan and adjust forecasts as needed.',
+    url: '/sharepoint/finance/budget-planning.docx'
+  },
+  {
+    id: 'finance-003',
+    title: 'Expense Reimbursement Policy',
+    type: 'pdf',
+    domain: 'Finance',
+    content: 'Submit expense reports within 30 days of incurring expenses. Approved expenses include: travel, meals, accommodations, client entertainment (with approval), and business supplies. Attach receipts for all expenses over $25. Reimbursement processed within 10 business days.',
+    url: '/sharepoint/finance/expense-policy.pdf'
+  },
+
+  // Salesforce Domain
+  {
+    id: 'salesforce-001',
+    title: 'Salesforce CRM User Guide',
+    type: 'pdf',
+    domain: 'Salesforce',
+    content: 'Salesforce is our customer relationship management platform. Use it to track leads, opportunities, accounts, contacts, and cases. All client interactions should be logged in Salesforce for visibility and reporting. Custom fields and workflows are configured for our specific business needs.',
+    url: '/sharepoint/salesforce/user-guide.pdf'
+  },
+  {
+    id: 'salesforce-002',
+    title: 'Salesforce Opportunity Management',
+    type: 'document',
+    domain: 'Salesforce',
+    content: 'Track sales opportunities through the pipeline: Prospecting, Qualification, Proposal, Negotiation, Closed Won/Lost. Update opportunity stage, amount, close date, and probability regularly. Sales forecasting relies on accurate opportunity data.',
+    url: '/sharepoint/salesforce/opportunity-mgmt.docx'
+  },
+  {
+    id: 'salesforce-003',
+    title: 'Salesforce Custom Reports',
     type: 'ppt',
-    domain: 'Processing',
-    content: 'Our data processing pipeline uses ETL (Extract, Transform, Load) methodology. Data sources include CRM, ERP, and external APIs. Processing includes data validation, normalization, deduplication, and enrichment. Output formats support JSON, CSV, Parquet, and SQL databases.',
-    url: '/sharepoint/data-processing/architecture-overview.pptx'
-  },
-  {
-    id: 'data-002',
-    title: 'Data Quality Standards & Validation',
-    type: 'document',
-    domain: 'Processing',
-    content: 'Data quality framework enforces: completeness (no missing critical fields), accuracy (validation against source systems), consistency (uniform formats), timeliness (processing within SLA), and uniqueness (no duplicate records). Quality scores must exceed 95% threshold.',
-    url: '/sharepoint/data-processing/quality-standards.docx'
-  },
-  {
-    id: 'data-003',
-    title: 'ETL Pipeline Configuration Guide',
-    type: 'pdf',
-    domain: 'Processing',
-    content: 'Configure ETL pipelines using our workflow engine. Steps include: source connection setup, transformation rules definition, error handling configuration, scheduling setup, and monitoring dashboard activation. Supports batch and real-time processing modes.',
-    url: '/sharepoint/data-processing/etl-config-guide.pdf'
+    domain: 'Salesforce',
+    content: 'Create custom reports and dashboards in Salesforce. Common reports include: sales pipeline by stage, win/loss analysis, client engagement metrics, and revenue forecasts. Use filters, groupings, and formulas for advanced analysis. Schedule reports for automatic delivery.',
+    url: '/sharepoint/salesforce/custom-reports.pptx'
   },
 
-  // Hosting Domain
+  // DEFS Domain
   {
-    id: 'host-001',
-    title: 'Cloud Infrastructure Specifications',
-    type: 'document',
-    domain: 'Hosting',
-    content: 'Our hosting infrastructure runs on AWS with multi-region deployment (US-East, EU-West, APAC-Singapore). Services include EC2 for compute, S3 for storage, RDS for databases, and CloudFront for CDN. Auto-scaling configured for 99.99% uptime SLA.',
-    url: '/sharepoint/hosting/infrastructure-specs.docx'
-  },
-  {
-    id: 'host-002',
-    title: 'Server Maintenance & Patching Schedule',
+    id: 'defs-001',
+    title: 'DEFS System Architecture',
     type: 'pdf',
-    domain: 'Hosting',
-    content: 'Maintenance windows: Second Tuesday of each month, 2-6 AM EST. Critical security patches applied within 48 hours. OS updates follow testing cycle: Dev (Week 1), Staging (Week 2), Production (Week 3). Automated backups run daily at midnight.',
-    url: '/sharepoint/hosting/maintenance-schedule.pdf'
+    domain: 'DEFS',
+    content: 'DEFS (Data Exchange and Filing System) manages secure document exchange with courts, agencies, and clients. Supports electronic filing, certified delivery tracking, and compliance with court-specific formatting requirements. Integrates with case management systems.',
+    url: '/sharepoint/defs/architecture.pdf'
   },
   {
-    id: 'host-003',
-    title: 'Disaster Recovery Procedures',
+    id: 'defs-002',
+    title: 'Electronic Filing Procedures',
+    type: 'document',
+    domain: 'DEFS',
+    content: 'File documents electronically using DEFS. Prepare documents according to court rules, validate formatting and metadata, submit via DEFS portal, receive confirmation receipt, and monitor filing status. Emergency filings available 24/7 with expedited processing.',
+    url: '/sharepoint/defs/filing-procedures.docx'
+  },
+  {
+    id: 'defs-003',
+    title: 'DEFS Security and Compliance',
+    type: 'pdf',
+    domain: 'DEFS',
+    content: 'DEFS implements end-to-end encryption, secure authentication, audit logging, and compliance with court security requirements. All transmissions are encrypted using TLS 1.3. Access controls based on user roles and matter permissions.',
+    url: '/sharepoint/defs/security-compliance.pdf'
+  },
+
+  // Ediscovery Domain
+  {
+    id: 'ediscovery-001',
+    title: 'Ediscovery Process Overview',
     type: 'ppt',
-    domain: 'Hosting',
-    content: 'RTO (Recovery Time Objective): 4 hours. RPO (Recovery Point Objective): 1 hour. Backup strategy includes: hourly snapshots, daily full backups, weekly offsite replication. DR site located in different geographic region. Quarterly DR drills mandatory.',
-    url: '/sharepoint/hosting/disaster-recovery.pptx'
-  },
-
-  // Development Domain
-  {
-    id: 'dev-001',
-    title: 'Software Development Lifecycle (SDLC)',
-    type: 'document',
-    domain: 'Development',
-    content: 'Our SDLC follows Agile methodology with 2-week sprints. Phases include: Requirements gathering, Design review, Development, Code review, QA testing, UAT, and Production deployment. All code must pass CI/CD pipeline checks before merge.',
-    url: '/sharepoint/development/sdlc-guide.docx'
+    domain: 'Ediscovery',
+    content: 'Ediscovery process follows EDRM model: Information Governance, Identification, Preservation, Collection, Processing, Review, Analysis, Production, and Presentation. Each phase has specific procedures, quality controls, and documentation requirements.',
+    url: '/sharepoint/ediscovery/process-overview.pptx'
   },
   {
-    id: 'dev-002',
-    title: 'Code Review & Quality Standards',
+    id: 'ediscovery-002',
+    title: 'Data Collection and Preservation',
     type: 'pdf',
-    domain: 'Development',
-    content: 'Code review checklist: functional correctness, security vulnerabilities, performance optimization, error handling, test coverage >80%, documentation completeness. Peer review required for all PRs. Senior developer approval needed for architecture changes.',
-    url: '/sharepoint/development/code-standards.pdf'
+    domain: 'Ediscovery',
+    content: 'Legal hold procedures ensure data preservation. Identify custodians and data sources, issue legal hold notices, collect data using forensically sound methods, maintain chain of custody, and document all collection activities. Use approved collection tools and methods.',
+    url: '/sharepoint/ediscovery/collection-preservation.pdf'
   },
   {
-    id: 'dev-003',
-    title: 'API Development Guidelines',
+    id: 'ediscovery-003',
+    title: 'Ediscovery Technology Stack',
     type: 'document',
-    domain: 'Development',
-    content: 'RESTful API standards: Use proper HTTP methods (GET, POST, PUT, DELETE), implement versioning (v1, v2), return standard status codes, include pagination for lists, implement rate limiting (1000 req/hour), require authentication via OAuth 2.0.',
-    url: '/sharepoint/development/api-guidelines.docx'
+    domain: 'Ediscovery',
+    content: 'Our ediscovery platform includes: Relativity for document review, Nuix for processing and analytics, Cellebrite for mobile device collection, and custom tools for specialized data types. All tools certified and validated for legal proceedings.',
+    url: '/sharepoint/ediscovery/technology-stack.docx'
   },
 
-  // Deployment Domain
+  // Managed Review Domain
   {
-    id: 'deploy-001',
-    title: 'CI/CD Pipeline Configuration',
+    id: 'managed-review-001',
+    title: 'Managed Review Services Guide',
+    type: 'pdf',
+    domain: 'Managed Review',
+    content: 'Managed Review provides scalable document review services. Services include: reviewer staffing, project management, quality control, workflow design, and technology setup. Review teams trained on specific matter requirements and review protocols.',
+    url: '/sharepoint/managed-review/services-guide.pdf'
+  },
+  {
+    id: 'managed-review-002',
+    title: 'Review Workflow and Quality Control',
+    type: 'document',
+    domain: 'Managed Review',
+    content: 'Review workflow includes first-level review, second-level quality check, and privilege review. Quality control measures: random sampling, statistical validation, accuracy metrics, and continuous reviewer training. Target accuracy rate: 98% or higher.',
+    url: '/sharepoint/managed-review/workflow-qc.docx'
+  },
+  {
+    id: 'managed-review-003',
+    title: 'Reviewer Training Program',
     type: 'ppt',
-    domain: 'Deployment',
-    content: 'Automated deployment pipeline: Git commit triggers build, unit tests run, code quality scan (SonarQube), security scan (SAST/DAST), build Docker image, deploy to staging, run integration tests, manual approval gate, production deployment with blue-green strategy.',
-    url: '/sharepoint/deployment/cicd-pipeline.pptx'
-  },
-  {
-    id: 'deploy-002',
-    title: 'Environment Management Strategy',
-    type: 'document',
-    domain: 'Deployment',
-    content: 'Four environments: Dev (developer machines), QA (testing), Staging (production mirror), Production (live). Environment parity ensures consistency. Configuration managed via environment variables. Secrets stored in HashiCorp Vault.',
-    url: '/sharepoint/deployment/environment-strategy.docx'
-  },
-  {
-    id: 'deploy-003',
-    title: 'Rollback Procedures & Version Control',
-    type: 'pdf',
-    domain: 'Deployment',
-    content: 'Rollback within 15 minutes for critical issues. Maintain previous 3 versions for instant rollback. Use feature flags for gradual rollout. Monitor error rates, response times, and user feedback post-deployment. Automated rollback triggers if error rate exceeds 5%.',
-    url: '/sharepoint/deployment/rollback-procedures.pdf'
+    domain: 'Managed Review',
+    content: 'All reviewers complete comprehensive training: platform navigation, review protocols, privilege identification, quality standards, and matter-specific training. Ongoing training sessions address identified issues and reinforce best practices.',
+    url: '/sharepoint/managed-review/training-program.pptx'
   },
 
-  // Security Domain
+  // Cyber Review Domain
   {
-    id: 'sec-001',
-    title: 'Information Security Policy 2024',
+    id: 'cyber-review-001',
+    title: 'Cyber Incident Review Process',
     type: 'pdf',
-    domain: 'Security',
-    content: 'Security framework based on ISO 27001 and NIST standards. Requirements: MFA for all users, encryption at rest (AES-256) and in transit (TLS 1.3), regular penetration testing, security awareness training, incident response plan, and annual security audits.',
-    url: '/sharepoint/security/security-policy-2024.pdf'
+    domain: 'Cyber Review',
+    content: 'Cyber review investigates security incidents, data breaches, and cyber attacks. Process includes: incident triage, forensic data collection, malware analysis, timeline reconstruction, impact assessment, and regulatory notification requirements.',
+    url: '/sharepoint/cyber-review/incident-process.pdf'
   },
   {
-    id: 'sec-002',
-    title: 'Incident Response Playbook',
+    id: 'cyber-review-002',
+    title: 'Digital Forensics Procedures',
     type: 'document',
-    domain: 'Security',
-    content: 'Security incident phases: Detection (monitoring alerts), Analysis (threat assessment), Containment (isolate affected systems), Eradication (remove threat), Recovery (restore services), Lessons learned (post-mortem). Security team on-call 24/7.',
-    url: '/sharepoint/security/incident-response.docx'
+    domain: 'Cyber Review',
+    content: 'Forensic investigations follow industry standards. Create forensic images, preserve evidence integrity, analyze logs and artifacts, identify indicators of compromise, document findings, and maintain chain of custody for potential legal proceedings.',
+    url: '/sharepoint/cyber-review/forensics-procedures.docx'
   },
   {
-    id: 'sec-003',
-    title: 'Vulnerability Management Process',
+    id: 'cyber-review-003',
+    title: 'Threat Intelligence and Analysis',
     type: 'ppt',
-    domain: 'Security',
-    content: 'Continuous vulnerability scanning using Nessus and Qualys. Severity levels: Critical (patch within 24h), High (within 7 days), Medium (within 30 days), Low (quarterly). Monthly security reports to CISO. Bug bounty program for external researchers.',
-    url: '/sharepoint/security/vulnerability-mgmt.pptx'
+    domain: 'Cyber Review',
+    content: 'Cyber review includes threat intelligence gathering, attack vector analysis, attribution assessment, and remediation recommendations. Use threat intelligence platforms, malware sandboxes, and network analysis tools to understand and respond to cyber threats.',
+    url: '/sharepoint/cyber-review/threat-intelligence.pptx'
   },
 
-  // Compliance Domain
+  // Datamart Tech Domain
   {
-    id: 'comp-001',
-    title: 'SOC 2 Type II Compliance Framework',
+    id: 'datamart-001',
+    title: 'Datamart Architecture Overview',
     type: 'pdf',
-    domain: 'Compliance',
-    content: 'SOC 2 controls cover: Security (access controls, encryption), Availability (99.9% uptime), Processing Integrity (data accuracy), Confidentiality (data classification), Privacy (GDPR alignment). Annual audit by external firm required.',
-    url: '/sharepoint/compliance/soc2-framework.pdf'
+    domain: 'Datamart Tech',
+    content: 'Datamart Tech provides specialized data warehouses for analytics and reporting. Architecture includes: data ingestion layers, transformation pipelines, star schema models, query optimization, and reporting interfaces. Supports both batch and real-time data loads.',
+    url: '/sharepoint/datamart/architecture-overview.pdf'
   },
   {
-    id: 'comp-002',
-    title: 'Regulatory Compliance Checklist',
+    id: 'datamart-002',
+    title: 'Datamart ETL Processes',
     type: 'document',
-    domain: 'Compliance',
-    content: 'Applicable regulations: GDPR (EU data protection), CCPA (California privacy), HIPAA (healthcare data), PCI-DSS (payment cards), SOX (financial reporting). Compliance officer reviews quarterly. Documentation retention: 7 years minimum.',
-    url: '/sharepoint/compliance/regulatory-checklist.docx'
+    domain: 'Datamart Tech',
+    content: 'ETL processes extract data from source systems, transform according to business rules, and load into data warehouse. Scheduled jobs run nightly with incremental updates. Data quality checks validate completeness and accuracy before making data available for reporting.',
+    url: '/sharepoint/datamart/etl-processes.docx'
   },
   {
-    id: 'comp-003',
-    title: 'Audit Trail & Record Keeping',
+    id: 'datamart-003',
+    title: 'Datamart Query Optimization',
     type: 'pdf',
-    domain: 'Compliance',
-    content: 'All system activities logged with timestamps, user IDs, and actions performed. Logs retained for 1 year in hot storage, 7 years in cold storage. Tamper-proof audit trails using blockchain technology. Monthly compliance reports generated automatically.',
-    url: '/sharepoint/compliance/audit-trail-policy.pdf'
-  },
-
-  // Analytics Domain
-  {
-    id: 'analytics-001',
-    title: 'Business Intelligence Dashboard Setup',
-    type: 'ppt',
-    domain: 'Analytics',
-    content: 'BI platform provides real-time insights into: customer behavior, revenue trends, operational efficiency, and security metrics. Built on Tableau with data warehouse integration. Automated daily reports to stakeholders. Self-service analytics enabled.',
-    url: '/sharepoint/analytics/bi-dashboard-setup.pptx'
-  },
-  {
-    id: 'analytics-002',
-    title: 'Data Analytics Best Practices',
-    type: 'document',
-    domain: 'Analytics',
-    content: 'Analytics methodology: Define KPIs, collect clean data, apply statistical methods, visualize insights, validate findings, and communicate results. Tools include Python (pandas, scikit-learn), R, SQL, and Tableau. Peer review for all analysis.',
-    url: '/sharepoint/analytics/analytics-best-practices.docx'
-  },
-  {
-    id: 'analytics-003',
-    title: 'Predictive Analytics Models',
-    type: 'pdf',
-    domain: 'Analytics',
-    content: 'Machine learning models for: customer churn prediction (85% accuracy), fraud detection (92% precision), demand forecasting (88% accuracy), and anomaly detection. Models retrained monthly with new data. A/B testing for model improvements.',
-    url: '/sharepoint/analytics/predictive-models.pdf'
-  },
-
-  // Review Domain
-  {
-    id: 'review-001',
-    title: 'Code Review Process and Guidelines',
-    type: 'pdf',
-    domain: 'Review',
-    content: 'Our review process ensures quality and consistency. All code changes require peer review before merging. Reviewers check for: code quality, security vulnerabilities, performance issues, test coverage, and documentation. Reviews should be completed within 24 hours. Use the review checklist template for consistency.',
-    url: '/sharepoint/review/code-review-guidelines.pdf'
-  },
-  {
-    id: 'review-002',
-    title: 'Document Review Workflow',
-    type: 'document',
-    domain: 'Review',
-    content: 'Document review workflow includes: draft submission, stakeholder review, feedback collection, revision cycles, and final approval. All major documents require review from legal, compliance, and business owners. Track review status in the review management system.',
-    url: '/sharepoint/review/document-review-workflow.docx'
-  },
-  {
-    id: 'review-003',
-    title: 'Design Review Best Practices',
-    type: 'ppt',
-    domain: 'Review',
-    content: 'Design reviews validate architecture decisions before implementation. Reviews cover: system design, scalability, security, integration points, and technical debt. Include architecture diagrams and technical specifications. Schedule reviews early in the development cycle.',
-    url: '/sharepoint/review/design-review-practices.pptx'
-  },
-
-  // DOC Domain
-  {
-    id: 'doc-001',
-    title: 'Documentation Standards and Templates',
-    type: 'pdf',
-    domain: 'DOC',
-    content: 'Follow our documentation standards for consistency. Use provided templates for: technical specifications, API documentation, user guides, and runbooks. All documentation must be stored in the central repository with version control. Update documentation with every code change.',
-    url: '/sharepoint/documentation/doc-standards.pdf'
-  },
-  {
-    id: 'doc-002',
-    title: 'API Documentation Guide',
-    type: 'document',
-    domain: 'DOC',
-    content: 'API documentation includes: endpoint descriptions, request/response formats, authentication requirements, rate limits, error codes, and example calls. Use OpenAPI/Swagger specification. Keep documentation synchronized with code using automated tools.',
-    url: '/sharepoint/documentation/api-doc-guide.docx'
-  },
-  {
-    id: 'doc-003',
-    title: 'Technical Writing Guidelines',
-    type: 'document',
-    domain: 'DOC',
-    content: 'Write clear, concise technical documentation. Use active voice, simple language, and structured format. Include: purpose, prerequisites, step-by-step instructions, screenshots, troubleshooting tips, and related resources. Review documentation for accuracy and completeness.',
-    url: '/sharepoint/documentation/writing-guidelines.docx'
-  },
-
-  // ICE Domain
-  {
-    id: 'ice-001',
-    title: 'ICE System Architecture Overview',
-    type: 'ppt',
-    domain: 'ICE',
-    content: 'ICE (Internal Communication Engine) is our enterprise messaging platform. Architecture includes: message queues, pub/sub system, event streaming, and notification service. Supports real-time messaging, asynchronous communication, and system integration. Built for high throughput and low latency.',
-    url: '/sharepoint/ice/ice-architecture.pptx'
-  },
-  {
-    id: 'ice-002',
-    title: 'ICE Integration Guide',
-    type: 'pdf',
-    domain: 'ICE',
-    content: 'Integrate with ICE using our SDK and REST API. Common use cases: sending notifications, subscribing to events, implementing webhooks, and message routing. Authentication via API keys. Rate limits: 10,000 requests per hour. Includes code examples for Java, Python, and Node.js.',
-    url: '/sharepoint/ice/ice-integration-guide.pdf'
-  },
-  {
-    id: 'ice-003',
-    title: 'ICE Monitoring and Troubleshooting',
-    type: 'document',
-    domain: 'ICE',
-    content: 'Monitor ICE health via dashboard showing: message throughput, queue depths, latency metrics, and error rates. Common issues: message delays (check queue backlog), failed deliveries (verify endpoints), authentication errors (rotate API keys). Contact ICE support for critical issues.',
-    url: '/sharepoint/ice/ice-troubleshooting.docx'
-  },
-
-  // Sightline Domain
-  {
-    id: 'sightline-001',
-    title: 'Sightline Analytics Platform Overview',
-    type: 'pdf',
-    domain: 'Sightline',
-    content: 'Sightline provides comprehensive business analytics and reporting. Features include: customizable dashboards, automated reports, data visualization, trend analysis, and predictive insights. Integrates with all major data sources. Access via web portal or mobile app.',
-    url: '/sharepoint/sightline/sightline-overview.pdf'
-  },
-  {
-    id: 'sightline-002',
-    title: 'Creating Custom Sightline Reports',
-    type: 'document',
-    domain: 'Sightline',
-    content: 'Build custom reports using drag-and-drop interface. Select data sources, apply filters, choose visualizations (charts, tables, graphs), and set refresh schedules. Share reports with teams or embed in applications. Use templates for common report types.',
-    url: '/sharepoint/sightline/custom-reports.docx'
-  },
-  {
-    id: 'sightline-003',
-    title: 'Sightline Data Source Configuration',
-    type: 'ppt',
-    domain: 'Sightline',
-    content: 'Connect Sightline to data sources: databases (SQL, NoSQL), APIs, cloud storage, and data warehouses. Configure connection credentials, set sync schedules, map data fields, and test connectivity. Data refreshes automatically based on schedule. Supports real-time streaming for live data.',
-    url: '/sharepoint/sightline/data-source-config.pptx'
-  },
-
-  // ServiceNow Domain
-  {
-    id: 'servicenow-001',
-    title: 'ServiceNow Ticketing System Guide',
-    type: 'pdf',
-    domain: 'ServiceNow',
-    content: 'Use ServiceNow for IT support, incident management, and change requests. Create tickets with detailed descriptions, select appropriate category, set priority level, and attach relevant files. Track ticket status and receive notifications. Average resolution time: P1 (4 hours), P2 (24 hours), P3 (3 days).',
-    url: '/sharepoint/servicenow/ticketing-guide.pdf'
-  },
-  {
-    id: 'servicenow-002',
-    title: 'ServiceNow Workflow Automation',
-    type: 'document',
-    domain: 'ServiceNow',
-    content: 'Automate IT processes using ServiceNow workflows. Common automations: user provisioning, access requests, asset management, and approval routing. Build workflows using visual designer. Configure triggers, conditions, actions, and notifications. Test workflows in sandbox before production deployment.',
-    url: '/sharepoint/servicenow/workflow-automation.docx'
-  },
-  {
-    id: 'servicenow-003',
-    title: 'ServiceNow Integration API',
-    type: 'pdf',
-    domain: 'ServiceNow',
-    content: 'Integrate applications with ServiceNow using REST API. API supports: creating/updating tickets, querying records, managing configurations, and retrieving reports. Authentication via OAuth 2.0. Include comprehensive API documentation with examples. Rate limits and best practices for bulk operations.',
-    url: '/sharepoint/servicenow/integration-api.pdf'
+    domain: 'Datamart Tech',
+    content: 'Optimize queries using indexes, partitioning, and materialized views. Best practices include: filter early, use appropriate joins, limit result sets, avoid SELECT *, and leverage query caching. Monitor query performance and adjust optimization strategies as needed.',
+    url: '/sharepoint/datamart/query-optimization.pdf'
   },
 ];
 
-export const getDomainSuggestions = (selectedTags: string[]): string[] => {
-  const suggestionMap: Record<string, string[]> = {
-    Legal: [
-      'What are our GDPR compliance requirements?',
-      'How do I create a standard contract?',
-      'What is our IP protection policy?',
-      'When is legal review required?',
-    ],
-    Processing: [
-      'How does our ETL pipeline work?',
-      'What are the data quality standards?',
-      'How to configure data validation?',
-      'What formats do we support?',
-    ],
-    Hosting: [
-      'What is our infrastructure setup?',
-      'When is the next maintenance window?',
-      'What is our disaster recovery plan?',
-      'How do I request a server upgrade?',
-    ],
-    Development: [
-      'What is our development workflow?',
-      'What are the code review requirements?',
-      'How to create a new API endpoint?',
-      'What testing is required?',
-    ],
-    Deployment: [
-      'How does our CI/CD pipeline work?',
-      'What are the deployment environments?',
-      'How do I rollback a deployment?',
-      'What are the approval requirements?',
-    ],
-    Security: [
-      'What are our security policies?',
-      'How to report a security incident?',
-      'What is the vulnerability patching timeline?',
-      'What security tools do we use?',
-    ],
-    Compliance: [
-      'What compliance standards do we follow?',
-      'How to prepare for SOC 2 audit?',
-      'What is our data retention policy?',
-      'How are audit logs maintained?',
-    ],
-    Analytics: [
-      'How to access BI dashboards?',
-      'What analytics tools are available?',
-      'How to request a custom report?',
-      'What are our key performance metrics?',
-    ],
-    Review: [
-      'What is the code review process?',
-      'How to submit documents for review?',
-      'What are design review requirements?',
-      'How long does review take?',
-    ],
-    DOC: [
-      'What documentation standards do we follow?',
-      'How to write API documentation?',
-      'Where are the documentation templates?',
-      'How to update technical docs?',
-    ],
-    ICE: [
-      'What is ICE platform?',
-      'How to integrate with ICE?',
-      'What are ICE rate limits?',
-      'How to troubleshoot ICE issues?',
-    ],
-    Sightline: [
-      'How to access Sightline?',
-      'How to create custom reports?',
-      'How to connect data sources?',
-      'What visualizations are available?',
-    ],
-    ServiceNow: [
-      'How to create a ticket?',
-      'What are ticket priority levels?',
-      'How to automate workflows?',
-      'How to use ServiceNow API?',
-    ],
-  };
+const domainSuggestions: Record<string, string[]> = {
+  'CASE': [
+    'How do I create a new matter in CASE?',
+    'What document types can I upload to CASE?',
+    'How do I search for documents in CASE?',
+  ],
+  'CASE Billing': [
+    'How do I generate an invoice in CASE Billing?',
+    'How do I update billing rates?',
+    'What expenses are billable?',
+  ],
+  'Finance': [
+    'How do I submit expense reports?',
+    'What is the budget approval process?',
+    'When are financial reports due?',
+  ],
+  'Salesforce': [
+    'How do I create an opportunity in Salesforce?',
+    'How do I update client information?',
+    'How do I run sales reports?',
+  ],
+  'DEFS': [
+    'How do I file documents electronically?',
+    'What are the court filing requirements?',
+    'How do I track filing status?',
+  ],
+  'Ediscovery': [
+    'What is the ediscovery process?',
+    'How do I preserve electronic evidence?',
+    'What tools do we use for ediscovery?',
+  ],
+  'Managed Review': [
+    'What is the document review process?',
+    'How is quality control managed?',
+    'What is the reviewer training program?',
+  ],
+  'Cyber Review': [
+    'How do we investigate cyber incidents?',
+    'What are digital forensics procedures?',
+    'How do we analyze cyber threats?',
+  ],
+  'Datamart Tech': [
+    'How is the datamart structured?',
+    'How do I optimize datamart queries?',
+    'What is the data refresh schedule?',
+  ],
+};
 
+export function searchKnowledgeBase(query: string, tags: string[] = []): KnowledgeSource[] {
+  const queryLower = query.toLowerCase();
+  
+  let results = knowledgeBase.filter(source => {
+    const matchesDomain = tags.length === 0 || tags.includes(source.domain);
+    const matchesContent = 
+      source.title.toLowerCase().includes(queryLower) ||
+      source.content.toLowerCase().includes(queryLower);
+    
+    return matchesDomain && matchesContent;
+  });
+
+  if (results.length === 0 && tags.length > 0) {
+    results = knowledgeBase.filter(source => tags.includes(source.domain));
+  }
+
+  return results.slice(0, 5);
+}
+
+export function getDomainSuggestions(selectedTags: string[]): string[] {
   if (selectedTags.length === 0) {
-    return [
-      'What services does our company provide?',
-      'How do I get started with data processing?',
-      'What are our security best practices?',
-    ];
+    return Object.values(domainSuggestions).flat().slice(0, 4);
   }
 
   const suggestions: string[] = [];
   selectedTags.forEach(tag => {
-    if (suggestionMap[tag]) {
-      suggestions.push(...suggestionMap[tag]);
+    if (domainSuggestions[tag]) {
+      suggestions.push(...domainSuggestions[tag]);
     }
   });
 
   return suggestions.slice(0, 4);
-};
+}
 
-export const searchKnowledgeBase = (query: string, tags: string[]): KnowledgeSource[] => {
-  const queryLower = query.toLowerCase();
-  
-  return knowledgeBase.filter(source => {
-    const matchesTag = tags.length === 0 || tags.includes(source.domain);
-    const matchesQuery = 
-      source.title.toLowerCase().includes(queryLower) ||
-      source.content.toLowerCase().includes(queryLower);
-    
-    return matchesTag && matchesQuery;
-  }).slice(0, 3);
-};
+export const availableDomains = [
+  'CASE',
+  'CASE Billing',
+  'Finance',
+  'Salesforce',
+  'DEFS',
+  'Ediscovery',
+  'Managed Review',
+  'Cyber Review',
+  'Datamart Tech',
+];

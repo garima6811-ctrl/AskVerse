@@ -9,19 +9,15 @@ import { useAuth } from "@/contexts/AuthContext";
 import { cn } from "@/lib/utils";
 
 const AVAILABLE_TAGS = [
-  "Legal",
-  "Processing",
-  "Hosting",
-  "Development",
-  "Deployment",
-  "Security",
-  "Compliance",
-  "Analytics",
-  "Review",
-  "DOC",
-  "ICE",
-  "Sightline",
-  "ServiceNow",
+  "CASE",
+  "CASE Billing",
+  "Finance",
+  "Salesforce",
+  "DEFS",
+  "Ediscovery",
+  "Managed Review",
+  "Cyber Review",
+  "Datamart Tech",
 ];
 
 export default function Chat() {

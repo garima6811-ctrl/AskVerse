@@ -7,357 +7,253 @@ export interface QAPair {
 }
 
 export const trainingData: QAPair[] = [
-  // Legal Domain
+  // CASE Domain
   {
-    question: "What are our GDPR compliance requirements?",
-    answer: "Our GDPR compliance framework ensures data protection and privacy across all operations.\n\n(1) Obtaining explicit consent before processing personal data\n(2) Maintaining detailed records of all data processing activities\n(3) Implementing privacy by design in all systems\n(4) Appointing a Data Protection Officer (DPO) for large-scale processing\n(5) Ensuring data breach notification within 72 hours of detection\n\nAll employees handling personal data must complete annual GDPR training.\n\nFor more information: https://gdpr.eu/compliance/",
-    domain: "Legal",
-    keywords: ["gdpr", "compliance", "data protection", "privacy", "consent", "personal data"],
-    sourceIds: ["legal-001"]
+    question: "How do I create a new matter in CASE?",
+    answer: "Creating a new matter in CASE is straightforward.\n\n1. Log in to the CASE platform\n2. Click 'New Matter' in the top navigation\n3. Fill in required fields: matter name, client, matter type, and assigned attorneys\n4. Add optional details like budget, timeline, and custom fields\n5. Click 'Save' to create the matter\n\nOnce created, you can start uploading documents and tracking case activities.",
+    domain: "CASE",
+    keywords: ["create matter", "new matter", "case", "matter creation"],
+    sourceIds: ["case-001", "case-002"]
   },
   {
-    question: "When is legal review required for contracts?",
-    answer: "Legal review is mandatory for all contracts exceeding $50,000 in value. Additionally, any contract involving IP transfer, long-term commitments (>1 year), liability clauses, or international parties requires legal review regardless of value. The legal team typically completes reviews within 3-5 business days for standard contracts.",
-    domain: "Legal",
-    keywords: ["contract", "legal review", "approval", "requirements"],
-    sourceIds: ["legal-002"]
+    question: "What document types can I upload to CASE?",
+    answer: "CASE supports a wide variety of document formats including PDFs, Word documents (DOC, DOCX), Excel spreadsheets, PowerPoint presentations, images (JPG, PNG), emails (MSG, EML), and text files. Maximum file size is 500MB per document. Bulk upload is available for multiple documents.",
+    domain: "CASE",
+    keywords: ["upload", "documents", "file types", "formats"],
+    sourceIds: ["case-002"]
   },
   {
-    question: "How do we protect intellectual property?",
-    answer: "Our IP protection strategy includes: (1) All employees sign IP assignment agreements transferring ownership to the company, (2) Source code and algorithms are protected under copyright law, (3) Novel inventions undergo patent application review, (4) Third-party IP requires proper licensing with legal verification, and (5) Regular IP audits to ensure compliance. Trade secrets are protected through NDAs and access controls.",
-    domain: "Legal",
-    keywords: ["intellectual property", "ip", "patent", "copyright", "trade secret"],
-    sourceIds: ["legal-003"]
-  },
-
-  // Data Processing Domain
-  {
-    question: "How does our ETL pipeline work?",
-    answer: "Our ETL pipeline automates data movement and transformation across systems.\n\n1. Extract: Data is pulled from CRM, ERP systems, and external APIs\n2. Transform: Data undergoes validation, normalization, deduplication, and enrichment\n3. Load: Processed data is loaded into target systems supporting JSON, CSV, Parquet, and SQL formats\n\nThe pipeline supports both batch processing (scheduled) and real-time streaming modes.\n\nLearn more: https://docs.company.com/etl-pipeline",
-    domain: "Processing",
-    keywords: ["etl", "pipeline", "data processing", "extract", "transform", "load"],
-    sourceIds: ["data-001"]
-  },
-  {
-    question: "What are the data quality standards?",
-    answer: "Our data quality framework enforces five key dimensions: (1) Completeness - no missing critical fields, (2) Accuracy - validation against source systems with 95%+ accuracy requirement, (3) Consistency - uniform formats across systems, (4) Timeliness - processing within defined SLA windows, and (5) Uniqueness - no duplicate records. All datasets must achieve a minimum 95% quality score before production release.",
-    domain: "Processing",
-    keywords: ["data quality", "validation", "standards", "accuracy", "completeness"],
-    sourceIds: ["data-002"]
-  },
-  {
-    question: "What data formats do we support?",
-    answer: "We support multiple input and output formats: JSON (for API integrations), CSV (for tabular data), Parquet (for big data analytics), XML (for legacy systems), and direct SQL database connections (PostgreSQL, MySQL, SQL Server). The ETL pipeline can convert between these formats as needed during the transformation phase.",
-    domain: "Processing",
-    keywords: ["data format", "json", "csv", "parquet", "sql", "formats"],
-    sourceIds: ["data-001", "data-003"]
+    question: "How does CASE integrate with other systems?",
+    answer: "CASE integrates with multiple enterprise systems through REST APIs.\n\n• Salesforce integration for client and matter sync\n• SharePoint connection for document management\n• Single sign-on (SSO) for unified authentication\n• Webhook notifications for real-time updates\n• Automated data synchronization on configurable schedules\n\nContact IT for integration setup and API documentation.",
+    domain: "CASE",
+    keywords: ["integration", "api", "salesforce", "sharepoint", "sso"],
+    sourceIds: ["case-003"]
   },
 
-  // Hosting Domain
+  // CASE Billing Domain
   {
-    question: "What is our infrastructure setup?",
-    answer: "We run on AWS cloud infrastructure with multi-region deployment across US-East, EU-West, and APAC-Singapore for global coverage. Our stack includes: EC2 instances for compute (auto-scaling enabled), S3 for object storage, RDS for managed databases (PostgreSQL), CloudFront CDN for content delivery, and Route 53 for DNS. This setup ensures 99.99% uptime SLA with automatic failover capabilities.",
-    domain: "Hosting",
-    keywords: ["infrastructure", "aws", "cloud", "hosting", "servers", "architecture"],
-    sourceIds: ["host-001"]
+    question: "How do I generate an invoice in CASE Billing?",
+    answer: "Generating invoices in CASE Billing is automated and customizable.\n\n1. Navigate to the CASE Billing dashboard\n2. Select the matter for invoicing\n3. Review billable hours and expenses\n4. Click 'Generate Invoice'\n5. Customize invoice template if needed\n6. Send via email or export to PDF\n\nThe system automatically calculates totals, applies correct rates, and includes all approved charges.",
+    domain: "CASE Billing",
+    keywords: ["invoice", "billing", "generate invoice", "payment"],
+    sourceIds: ["case-billing-001", "case-billing-002"]
   },
   {
-    question: "When is the next maintenance window?",
-    answer: "Scheduled maintenance occurs on the second Tuesday of each month from 2-6 AM EST. During this window, we apply non-critical patches and perform system updates. Critical security patches are applied within 48 hours of release, outside the regular schedule if necessary. You'll receive email notifications 72 hours before each maintenance window.",
-    domain: "Hosting",
-    keywords: ["maintenance", "downtime", "schedule", "patching", "updates"],
-    sourceIds: ["host-002"]
+    question: "How do I update billing rates?",
+    answer: "Billing rate updates are managed through rate cards. Navigate to Settings > Rate Cards, select the attorney or practice area, and update the hourly rate. The system tracks rate history, so changes apply going forward while preserving historical rates for prior work. Rate changes require manager approval.",
+    domain: "CASE Billing",
+    keywords: ["billing rates", "rate card", "hourly rate", "update rates"],
+    sourceIds: ["case-billing-003"]
   },
   {
-    question: "What is our disaster recovery plan?",
-    answer: "Our DR plan guarantees: RTO (Recovery Time Objective) of 4 hours and RPO (Recovery Point Objective) of 1 hour. We maintain: hourly automated snapshots, daily full backups, and weekly offsite replication to a geographically separate DR site. Quarterly DR drills validate our procedures. In case of a disaster, the incident commander initiates failover to the DR site following our documented runbook.",
-    domain: "Hosting",
-    keywords: ["disaster recovery", "dr", "backup", "failover", "rto", "rpo"],
-    sourceIds: ["host-003"]
-  },
-
-  // Development Domain
-  {
-    question: "What is our development workflow?",
-    answer: "We follow Agile methodology with 2-week sprints. The SDLC includes: (1) Requirements gathering and user story creation, (2) Design review and architecture approval, (3) Development with Git feature branches, (4) Peer code review via pull requests, (5) Automated testing in CI/CD pipeline, (6) QA testing in staging environment, (7) UAT with business stakeholders, and (8) Production deployment with rollback capability.",
-    domain: "Development",
-    keywords: ["development", "sdlc", "agile", "workflow", "process"],
-    sourceIds: ["dev-001"]
-  },
-  {
-    question: "What are the code review requirements?",
-    answer: "All code must pass peer review before merging. The review checklist covers: functional correctness, security vulnerabilities (OWASP top 10), performance optimization, proper error handling, test coverage exceeding 80%, and complete documentation. At least one senior developer must approve any architectural changes. Reviews typically complete within 24 hours for standard PRs.",
-    domain: "Development",
-    keywords: ["code review", "pull request", "pr", "approval", "quality"],
-    sourceIds: ["dev-002"]
-  },
-  {
-    question: "How do I create a new API endpoint?",
-    answer: "Follow our RESTful API guidelines: (1) Use appropriate HTTP methods (GET for reads, POST for creates, PUT for updates, DELETE for removals), (2) Implement API versioning (e.g., /api/v1/resource), (3) Return standard HTTP status codes (200, 201, 400, 404, 500), (4) Include pagination for list endpoints (limit/offset), (5) Implement rate limiting (1000 requests/hour default), (6) Require OAuth 2.0 authentication, and (7) Document the endpoint in our API specification.",
-    domain: "Development",
-    keywords: ["api", "endpoint", "rest", "restful", "development"],
-    sourceIds: ["dev-003"]
+    question: "What expenses are billable?",
+    answer: "Billable expenses include court filing fees, deposition costs, expert witness fees, travel expenses (when approved), document production costs, and research database charges. All expenses require receipts and must be coded to the appropriate matter. Client-specific billing guidelines may restrict certain expense types.",
+    domain: "CASE Billing",
+    keywords: ["expenses", "billable", "reimbursement", "costs"],
+    sourceIds: ["case-billing-001"]
   },
 
-  // Deployment Domain
+  // Finance Domain
   {
-    question: "How does our CI/CD pipeline work?",
-    answer: "Our automated deployment pipeline executes these steps: (1) Git commit triggers build process, (2) Unit tests execute automatically, (3) SonarQube performs code quality scan, (4) SAST/DAST security scanning runs, (5) Docker image builds and pushes to registry, (6) Automatic deployment to staging environment, (7) Integration tests run in staging, (8) Manual approval gate for production, (9) Blue-green deployment to production with zero downtime.",
-    domain: "Deployment",
-    keywords: ["cicd", "ci/cd", "pipeline", "deployment", "automation"],
-    sourceIds: ["deploy-001"]
+    question: "How do I submit expense reports?",
+    answer: "Submit expense reports through the finance portal within 30 days of incurring expenses.\n\n1. Log in to the finance portal\n2. Click 'New Expense Report'\n3. Add expense line items with dates and amounts\n4. Attach receipts for expenses over $25\n5. Submit for approval\n\nReimbursement is processed within 10 business days of approval.",
+    domain: "Finance",
+    keywords: ["expense report", "reimbursement", "expenses", "submit"],
+    sourceIds: ["finance-003"]
   },
   {
-    question: "What are the deployment environments?",
-    answer: "We maintain four isolated environments: (1) Development - individual developer machines for local testing, (2) QA - dedicated testing environment for QA team validation, (3) Staging - production mirror for final verification and UAT, (4) Production - live customer-facing environment. Configuration is managed via environment variables, and secrets are stored in HashiCorp Vault.",
-    domain: "Deployment",
-    keywords: ["environment", "dev", "staging", "production", "qa"],
-    sourceIds: ["deploy-002"]
+    question: "What is the budget approval process?",
+    answer: "Budget approval follows a structured annual cycle.\n\n• Q3: Department heads submit budget requests\n• Finance team consolidates and analyzes all requests\n• Executive team reviews and provides feedback\n• Final budget approved before fiscal year start\n• Quarterly reviews track actuals vs. budget\n\nMid-year adjustments require executive approval for amounts exceeding 10% variance.",
+    domain: "Finance",
+    keywords: ["budget", "approval", "planning", "fiscal"],
+    sourceIds: ["finance-002"]
   },
   {
-    question: "How do I rollback a deployment?",
-    answer: "Rollback procedures ensure quick recovery from deployment issues: (1) For critical issues, initiate immediate rollback via deployment dashboard (completes in ~15 minutes), (2) We maintain the previous 3 versions for instant rollback, (3) Feature flags enable gradual rollout and quick disable, (4) Automated rollback triggers if error rate exceeds 5% or response time degrades >50%, (5) Post-rollback, incident review determines root cause before re-deployment.",
-    domain: "Deployment",
-    keywords: ["rollback", "revert", "deployment", "failure", "recovery"],
-    sourceIds: ["deploy-003"]
-  },
-
-  // Security Domain
-  {
-    question: "What are our security policies?",
-    answer: "Our security framework follows ISO 27001 and NIST standards to protect all assets.\n\n1. Multi-factor authentication (MFA) for all user accounts\n2. AES-256 encryption at rest and TLS 1.3 for data in transit\n3. Quarterly penetration testing by certified ethical hackers\n4. Annual security awareness training for all employees\n5. 24/7 security monitoring with incident response team\n6. Annual third-party security audits\n\nRead our full security policy: https://company.com/security",
-    domain: "Security",
-    keywords: ["security", "policy", "iso 27001", "nist", "compliance"],
-    sourceIds: ["sec-001"]
-  },
-  {
-    question: "How to report a security incident?",
-    answer: "For security incidents, immediately: (1) Contact the security team via security@company.com or emergency hotline, (2) Document what you observed (time, systems affected, suspicious activity), (3) Do NOT attempt to investigate yourself - preserve evidence, (4) Our security team will: assess the threat, contain affected systems, eradicate the threat, recover services, and conduct post-mortem analysis. Report even suspected incidents - better safe than sorry.",
-    domain: "Security",
-    keywords: ["security incident", "breach", "report", "emergency"],
-    sourceIds: ["sec-002"]
-  },
-  {
-    question: "What is the vulnerability patching timeline?",
-    answer: "Vulnerability remediation follows strict SLAs based on severity: (1) Critical vulnerabilities - patch within 24 hours, (2) High severity - patch within 7 days, (3) Medium severity - patch within 30 days, (4) Low severity - patch quarterly. We use Nessus and Qualys for continuous scanning. Monthly security reports go to the CISO. We also maintain a bug bounty program for external researchers.",
-    domain: "Security",
-    keywords: ["vulnerability", "patch", "patching", "security", "timeline"],
-    sourceIds: ["sec-003"]
+    question: "When are financial reports due?",
+    answer: "Financial reports follow a monthly schedule. Monthly reports (income statement, balance sheet, cash flow) are due by the 10th business day of the following month. Quarterly reports require additional analysis and are due within 15 business days of quarter end. All reports require CFO approval before distribution.",
+    domain: "Finance",
+    keywords: ["financial reports", "reporting", "deadlines", "schedule"],
+    sourceIds: ["finance-001"]
   },
 
-  // Compliance Domain
+  // Salesforce Domain
   {
-    question: "What compliance standards do we follow?",
-    answer: "We maintain compliance with multiple regulatory frameworks: (1) GDPR for EU data protection, (2) CCPA for California privacy rights, (3) HIPAA for healthcare data (where applicable), (4) PCI-DSS for payment card data, (5) SOX for financial reporting, and (6) SOC 2 Type II for service organization controls. Our compliance officer performs quarterly reviews, and we retain documentation for 7 years minimum.",
-    domain: "Compliance",
-    keywords: ["compliance", "regulations", "gdpr", "hipaa", "soc 2"],
-    sourceIds: ["comp-002"]
+    question: "How do I create an opportunity in Salesforce?",
+    answer: "Creating opportunities in Salesforce tracks potential sales.\n\n1. Navigate to the Opportunities tab\n2. Click 'New Opportunity'\n3. Enter opportunity name, account, amount, and close date\n4. Select stage (Prospecting, Qualification, Proposal, etc.)\n5. Add products/services if applicable\n6. Save the opportunity\n\nUpdate the stage and details regularly for accurate forecasting.",
+    domain: "Salesforce",
+    keywords: ["opportunity", "create", "sales", "pipeline"],
+    sourceIds: ["salesforce-001", "salesforce-002"]
   },
   {
-    question: "How to prepare for SOC 2 audit?",
-    answer: "SOC 2 audit preparation involves: (1) Review and document all controls for Security, Availability, Processing Integrity, Confidentiality, and Privacy, (2) Ensure 99.9% uptime logs are available, (3) Verify access controls and encryption are properly implemented, (4) Gather evidence of security training completion, (5) Prepare incident response documentation, (6) Schedule with our external audit firm (typically 2-3 weeks duration). Our annual audit occurs in Q4.",
-    domain: "Compliance",
-    keywords: ["soc 2", "audit", "compliance", "preparation"],
-    sourceIds: ["comp-001"]
+    question: "How do I update client information in Salesforce?",
+    answer: "Update client information in the Accounts section. Search for the account, click to open, then click 'Edit' to modify contact details, billing address, account status, or custom fields. All changes are logged in the account history. Important updates should be noted in the account activity timeline.",
+    domain: "Salesforce",
+    keywords: ["client", "account", "update", "information"],
+    sourceIds: ["salesforce-001"]
   },
   {
-    question: "What is our data retention policy?",
-    answer: "Data retention follows regulatory requirements: (1) System audit logs - 1 year in hot storage, 7 years in cold storage for compliance, (2) Financial records - 7 years minimum per SOX requirements, (3) Customer data - retained per contract terms, deleted within 30 days of termination, (4) Employee records - 7 years post-employment, (5) Blockchain-based tamper-proof audit trails ensure data integrity throughout retention period.",
-    domain: "Compliance",
-    keywords: ["data retention", "retention policy", "compliance", "audit"],
-    sourceIds: ["comp-003"]
-  },
-
-  // Analytics Domain
-  {
-    question: "How to access BI dashboards?",
-    answer: "Access our Business Intelligence dashboards: (1) Log in to the BI portal at analytics.company.com with your SSO credentials, (2) Dashboards are organized by: Customer Analytics, Revenue Trends, Operational Efficiency, and Security Metrics, (3) Data refreshes in real-time for most metrics, (4) You can create custom views and save favorites, (5) Export capabilities available for reports (PDF, Excel, CSV). Contact the analytics team for custom dashboard requests.",
-    domain: "Analytics",
-    keywords: ["bi", "dashboard", "analytics", "business intelligence", "tableau"],
-    sourceIds: ["analytics-001"]
-  },
-  {
-    question: "What analytics tools are available?",
-    answer: "Our analytics stack includes: (1) Tableau for interactive dashboards and visualizations, (2) Python (pandas, scikit-learn) for advanced statistical analysis, (3) R for specialized statistical modeling, (4) SQL for direct data warehouse queries, (5) Jupyter notebooks for collaborative analysis. All analysts have access to our data warehouse with appropriate role-based permissions.",
-    domain: "Analytics",
-    keywords: ["analytics tools", "tableau", "python", "sql", "tools"],
-    sourceIds: ["analytics-002"]
-  },
-  {
-    question: "What are our key performance metrics?",
-    answer: "We track KPIs across all business areas: (1) Customer Metrics - NPS score, churn rate (target <5%), customer lifetime value, (2) Revenue - MRR growth, customer acquisition cost, (3) Operations - system uptime (99.99% SLA), processing throughput, (4) Security - incident response time (<30 min), vulnerability patch rate, (5) Predictive models provide forecasts for churn (85% accuracy), fraud (92% precision), and demand (88% accuracy).",
-    domain: "Analytics",
-    keywords: ["kpi", "metrics", "performance", "analytics", "key performance indicators"],
-    sourceIds: ["analytics-003"]
+    question: "How do I run sales reports in Salesforce?",
+    answer: "Run sales reports from the Reports tab. Common reports include pipeline analysis, win/loss reports, and revenue forecasts. Use filters for date ranges, regions, or sales reps. Create custom reports with the report builder, applying groupings and formulas as needed. Schedule reports for automatic delivery to stakeholders.",
+    domain: "Salesforce",
+    keywords: ["reports", "sales reports", "analytics", "dashboard"],
+    sourceIds: ["salesforce-003"]
   },
 
-  // Review Domain
+  // DEFS Domain
   {
-    question: "What is the code review process?",
-    answer: "Our code review process ensures quality before merging: (1) Create a pull request with detailed description of changes, (2) At least one peer reviewer must approve, (3) Reviewers check: code quality, security, performance, test coverage (>80%), and documentation, (4) Reviews should be completed within 24 hours, (5) Address all feedback and re-request review if needed. Use our review checklist template to ensure consistency.",
-    domain: "Review",
-    keywords: ["code review", "pull request", "peer review", "process"],
-    sourceIds: ["review-001"]
+    question: "How do I file documents electronically using DEFS?",
+    answer: "Electronic filing through DEFS streamlines court submissions.\n\n1. Log in to the DEFS portal\n2. Select the case and filing type\n3. Upload documents (ensure proper formatting)\n4. Validate metadata and filing requirements\n5. Submit filing and receive confirmation receipt\n6. Monitor filing status in the dashboard\n\nEmergency filings are available 24/7 with expedited processing.",
+    domain: "DEFS",
+    keywords: ["electronic filing", "e-filing", "court", "documents"],
+    sourceIds: ["defs-001", "defs-002"]
   },
   {
-    question: "How to submit documents for review?",
-    answer: "Submit documents for review: (1) Upload to the review management system, (2) Select reviewers based on document type (legal, compliance, business stakeholders), (3) Set review deadline and priority level, (4) Track review status in dashboard, (5) Address feedback and resubmit revised versions. All major documents require multi-stakeholder approval before finalization.",
-    domain: "Review",
-    keywords: ["document review", "submission", "approval", "workflow"],
-    sourceIds: ["review-002"]
+    question: "What are the court filing requirements in DEFS?",
+    answer: "Court filing requirements vary by jurisdiction. Generally, documents must be in PDF format with searchable text, properly bookmarked, and under 25MB. Metadata must include case number, party names, and document type. DEFS automatically validates formatting against court-specific rules before submission. Check the court rules library in DEFS for detailed requirements.",
+    domain: "DEFS",
+    keywords: ["filing requirements", "court rules", "formatting", "compliance"],
+    sourceIds: ["defs-002"]
   },
   {
-    question: "What are design review requirements?",
-    answer: "Design reviews validate technical decisions before implementation: (1) Submit architecture diagrams and technical specifications, (2) Schedule review meeting with architecture team, (3) Review covers: system design, scalability, security, integration points, technical debt, (4) Obtain approval before starting development, (5) Major architecture changes require senior architect approval. Schedule reviews early in the development cycle to avoid rework.",
-    domain: "Review",
-    keywords: ["design review", "architecture", "technical review", "requirements"],
-    sourceIds: ["review-003"]
-  },
-
-  // DOC Domain
-  {
-    question: "What documentation standards do we follow?",
-    answer: "Follow our documentation standards for consistency: (1) Use provided templates for technical specs, API docs, user guides, and runbooks, (2) Store all documentation in the central repository with version control, (3) Update documentation with every code change, (4) Include: purpose, prerequisites, detailed instructions, screenshots, troubleshooting, and related resources, (5) Peer review all documentation before publishing.",
-    domain: "DOC",
-    keywords: ["documentation", "standards", "templates", "guidelines"],
-    sourceIds: ["doc-001"]
-  },
-  {
-    question: "How to write API documentation?",
-    answer: "Write comprehensive API documentation: (1) Use OpenAPI/Swagger specification format, (2) Document each endpoint: description, request/response formats, authentication, rate limits, error codes, (3) Include example requests and responses, (4) Keep documentation synchronized with code using automated tools, (5) Provide SDKs and code samples in multiple languages. Update API docs with every API change.",
-    domain: "DOC",
-    keywords: ["api documentation", "swagger", "openapi", "api docs"],
-    sourceIds: ["doc-002"]
-  },
-  {
-    question: "Where are the documentation templates?",
-    answer: "Access documentation templates from: (1) Central repository at /sharepoint/documentation/templates, (2) Available templates: technical specifications, API documentation, user guides, runbooks, troubleshooting guides, (3) Templates include: standard structure, style guidelines, and examples, (4) Use templates to ensure consistency across all documentation. Contact the documentation team for custom template requests.",
-    domain: "DOC",
-    keywords: ["documentation templates", "templates", "docs"],
-    sourceIds: ["doc-001", "doc-003"]
+    question: "How do I track filing status in DEFS?",
+    answer: "Track filing status in the DEFS dashboard. Each filing shows current status: Submitted, Accepted, Rejected, or Filed. Email notifications alert you to status changes. For rejected filings, the system displays rejection reasons and allows resubmission. Historical filing records are maintained for audit and compliance purposes.",
+    domain: "DEFS",
+    keywords: ["filing status", "tracking", "notifications", "dashboard"],
+    sourceIds: ["defs-001", "defs-002"]
   },
 
-  // ICE Domain
+  // Ediscovery Domain
   {
-    question: "What is ICE platform?",
-    answer: "ICE (Internal Communication Engine) is our enterprise messaging platform providing: (1) Real-time messaging and notifications, (2) Event streaming and pub/sub system, (3) Message queues for asynchronous communication, (4) System integration capabilities. Built for high throughput and low latency. Supports multiple protocols and integrates with all major systems.",
-    domain: "ICE",
-    keywords: ["ice", "messaging", "platform", "communication engine"],
-    sourceIds: ["ice-001"]
+    question: "What is the ediscovery process?",
+    answer: "Our ediscovery process follows the EDRM (Electronic Discovery Reference Model).\n\n1. Information Governance - Data policies and procedures\n2. Identification - Locate potentially relevant data\n3. Preservation - Legal hold and data protection\n4. Collection - Forensically sound data gathering\n5. Processing - Data filtering and de-duplication\n6. Review - Document analysis and coding\n7. Analysis - Pattern identification and insights\n8. Production - Delivering responsive documents\n9. Presentation - Courtroom presentation\n\nEach phase has specific quality controls and documentation requirements.",
+    domain: "Ediscovery",
+    keywords: ["ediscovery", "edrm", "process", "electronic discovery"],
+    sourceIds: ["ediscovery-001"]
   },
   {
-    question: "How to integrate with ICE?",
-    answer: "Integrate with ICE using our SDK and REST API: (1) Obtain API keys from admin portal, (2) Use provided SDKs for Java, Python, or Node.js, (3) Common operations: send notifications, subscribe to events, implement webhooks, route messages, (4) Rate limit: 10,000 requests per hour, (5) Refer to integration guide for detailed examples and best practices. Test in sandbox environment before production.",
-    domain: "ICE",
-    keywords: ["ice integration", "api", "sdk", "webhooks"],
-    sourceIds: ["ice-002"]
+    question: "How do I preserve electronic evidence?",
+    answer: "Evidence preservation begins with legal hold procedures. Identify custodians and data sources, issue legal hold notices, document acknowledgments, collect data using forensically sound methods, maintain chain of custody logs, and store data securely. Use approved collection tools to ensure data integrity. All preservation activities must be thoroughly documented.",
+    domain: "Ediscovery",
+    keywords: ["preservation", "legal hold", "evidence", "collection"],
+    sourceIds: ["ediscovery-002"]
   },
   {
-    question: "How to troubleshoot ICE issues?",
-    answer: "Troubleshoot ICE issues: (1) Check dashboard for: message throughput, queue depths, latency metrics, error rates, (2) Common issues: Message delays - check queue backlog; Failed deliveries - verify endpoint configuration; Authentication errors - rotate API keys, (3) Review error logs for specific failure messages, (4) Contact ICE support for critical issues (support@ice.company.com). Include error logs and request IDs when reporting issues.",
-    domain: "ICE",
-    keywords: ["ice troubleshooting", "ice issues", "ice errors", "monitoring"],
-    sourceIds: ["ice-003"]
-  },
-
-  // Sightline Domain
-  {
-    question: "How to access Sightline?",
-    answer: "Access Sightline analytics platform: (1) Visit sightline.company.com and log in with SSO credentials, (2) Available on web portal and mobile app (iOS/Android), (3) Dashboard shows: business metrics, data visualizations, automated reports, trend analysis, (4) Customize your view by adding favorite reports and dashboards, (5) Access permissions are role-based - contact admin for additional access.",
-    domain: "Sightline",
-    keywords: ["sightline", "access", "login", "analytics platform"],
-    sourceIds: ["sightline-001"]
-  },
-  {
-    question: "How to create custom reports?",
-    answer: "Create custom Sightline reports: (1) Use drag-and-drop interface in report builder, (2) Select data sources from connected systems, (3) Apply filters and date ranges, (4) Choose visualizations: charts, tables, graphs, heatmaps, (5) Set refresh schedules (hourly, daily, weekly), (6) Share reports with teams or embed in applications. Use pre-built templates for common report types to save time.",
-    domain: "Sightline",
-    keywords: ["sightline reports", "custom reports", "report builder"],
-    sourceIds: ["sightline-002"]
-  },
-  {
-    question: "How to connect data sources?",
-    answer: "Connect data sources to Sightline: (1) Navigate to Data Sources configuration, (2) Select source type: database (SQL, NoSQL), API, cloud storage, data warehouse, (3) Configure connection credentials and test connectivity, (4) Set sync schedule for data refresh, (5) Map data fields to Sightline schema. Supports real-time streaming for live data. Contact data team for assistance with complex integrations.",
-    domain: "Sightline",
-    keywords: ["sightline data sources", "data connection", "integration"],
-    sourceIds: ["sightline-003"]
+    question: "What tools do we use for ediscovery?",
+    answer: "Our ediscovery technology stack includes Relativity for document review and workflow management, Nuix for data processing and analytics, Cellebrite for mobile device collection, and custom tools for specialized data types. All tools are certified and validated for legal proceedings. Training is available for all platforms.",
+    domain: "Ediscovery",
+    keywords: ["tools", "relativity", "nuix", "technology"],
+    sourceIds: ["ediscovery-003"]
   },
 
-  // ServiceNow Domain
+  // Managed Review Domain
   {
-    question: "How to create a ticket?",
-    answer: "Create ServiceNow ticket: (1) Log in to ServiceNow portal, (2) Click 'Create Ticket' and select type: Incident, Service Request, or Change Request, (3) Provide detailed description including: issue summary, steps to reproduce, impact, affected users, (4) Select appropriate category and priority level, (5) Attach relevant files or screenshots. You'll receive email notifications on ticket updates. Average resolution: P1 (4 hours), P2 (24 hours), P3 (3 days).",
-    domain: "ServiceNow",
-    keywords: ["servicenow", "ticket", "create ticket", "incident"],
-    sourceIds: ["servicenow-001"]
+    question: "What is the document review process?",
+    answer: "The managed review process ensures thorough and accurate document analysis.\n\n• First-level review: Initial document coding and responsiveness determination\n• Second-level review: Quality control sampling and validation\n• Privilege review: Identification of attorney-client privileged materials\n• Quality metrics: Continuous accuracy tracking (98% target)\n• Ongoing training: Regular sessions to address issues and maintain standards\n\nProject managers oversee workflow and communicate with stakeholders throughout the process.",
+    domain: "Managed Review",
+    keywords: ["document review", "review process", "managed review", "workflow"],
+    sourceIds: ["managed-review-001", "managed-review-002"]
   },
   {
-    question: "What are ticket priority levels?",
-    answer: "ServiceNow ticket priorities: (1) P1 (Critical) - Complete system outage or security breach, SLA: 4 hours resolution, (2) P2 (High) - Major functionality impaired, multiple users affected, SLA: 24 hours resolution, (3) P3 (Medium) - Minor functionality issue, workaround available, SLA: 3 days resolution, (4) P4 (Low) - Cosmetic issue or enhancement request, SLA: 7 days resolution. Priority is assigned based on business impact and urgency.",
-    domain: "ServiceNow",
-    keywords: ["servicenow priority", "ticket priority", "sla"],
-    sourceIds: ["servicenow-001"]
+    question: "How is quality control managed in document review?",
+    answer: "Quality control uses statistical sampling, accuracy metrics, and continuous training. Random samples are pulled for validation, with target accuracy rates of 98% or higher. Reviewers receive real-time feedback on errors. Quality analysts identify trends and provide targeted training. All quality metrics are reported to project stakeholders.",
+    domain: "Managed Review",
+    keywords: ["quality control", "qc", "accuracy", "validation"],
+    sourceIds: ["managed-review-002"]
   },
   {
-    question: "How to use ServiceNow API?",
-    answer: "Use ServiceNow REST API for integrations: (1) Authenticate using OAuth 2.0 with client credentials, (2) API supports: creating/updating tickets, querying records, managing configurations, retrieving reports, (3) Base URL: api.servicenow.company.com/v1, (4) Rate limits: 100 requests per minute, (5) Include comprehensive error handling for failed requests. Refer to API documentation for detailed endpoints and examples. Test in sandbox environment first.",
-    domain: "ServiceNow",
-    keywords: ["servicenow api", "api integration", "rest api"],
-    sourceIds: ["servicenow-003"]
+    question: "What is the reviewer training program?",
+    answer: "All reviewers complete comprehensive training covering platform navigation, review protocols, privilege identification, quality standards, and matter-specific requirements. Training includes hands-on exercises and assessment tests. Ongoing sessions address identified issues and reinforce best practices. Training materials are updated regularly based on project needs.",
+    domain: "Managed Review",
+    keywords: ["training", "reviewer", "education", "onboarding"],
+    sourceIds: ["managed-review-003"]
+  },
+
+  // Cyber Review Domain
+  {
+    question: "How do we investigate cyber incidents?",
+    answer: "Cyber incident investigation follows a structured approach.\n\n1. Incident Triage: Assess severity and impact\n2. Forensic Collection: Preserve digital evidence\n3. Analysis: Examine logs, artifacts, and malware\n4. Timeline Reconstruction: Map attack progression\n5. Impact Assessment: Determine scope of compromise\n6. Reporting: Document findings and recommendations\n7. Regulatory Notifications: Comply with breach notification requirements\n\nForensic investigators maintain chain of custody throughout the process.",
+    domain: "Cyber Review",
+    keywords: ["cyber incident", "investigation", "forensics", "breach"],
+    sourceIds: ["cyber-review-001"]
+  },
+  {
+    question: "What are digital forensics procedures?",
+    answer: "Digital forensics follows industry-standard procedures. Create forensic images of all evidence, preserve integrity using write-blockers and hash validation, analyze system logs and artifacts, identify indicators of compromise, document all findings with timestamps, and maintain chain of custody documentation. All procedures ensure evidence is admissible in legal proceedings.",
+    domain: "Cyber Review",
+    keywords: ["digital forensics", "forensic", "procedures", "evidence"],
+    sourceIds: ["cyber-review-002"]
+  },
+  {
+    question: "How do we analyze cyber threats?",
+    answer: "Threat analysis combines multiple intelligence sources. Use threat intelligence platforms to identify known attack patterns, analyze malware in isolated sandboxes, correlate network traffic patterns, assess attribution based on tactics and tools, and provide remediation recommendations. Analysis results guide incident response and security improvements.",
+    domain: "Cyber Review",
+    keywords: ["threat analysis", "threat intelligence", "malware", "attribution"],
+    sourceIds: ["cyber-review-003"]
+  },
+
+  // Datamart Tech Domain
+  {
+    question: "How is the datamart structured?",
+    answer: "The datamart uses a star schema architecture for optimal query performance.\n\n• Fact tables: Contain measurable data (transactions, events)\n• Dimension tables: Provide context (time, clients, matters)\n• Data ingestion: Batch and real-time processing\n• Transformation: Business rule application and data quality checks\n• Reporting layer: Pre-aggregated views for common queries\n\nArchitecture supports both operational reporting and analytical queries.",
+    domain: "Datamart Tech",
+    keywords: ["datamart", "architecture", "structure", "schema"],
+    sourceIds: ["datamart-001"]
+  },
+  {
+    question: "How do I optimize datamart queries?",
+    answer: "Query optimization uses several techniques: leverage indexes on commonly filtered columns, use partitioning for large tables, create materialized views for complex aggregations, filter data early in the query, use appropriate join types, limit result sets with WHERE clauses, avoid SELECT * statements, and leverage query result caching. Monitor query performance metrics and adjust strategies accordingly.",
+    domain: "Datamart Tech",
+    keywords: ["query optimization", "performance", "queries", "tuning"],
+    sourceIds: ["datamart-003"]
+  },
+  {
+    question: "What is the data refresh schedule for the datamart?",
+    answer: "The datamart refreshes on a scheduled basis. Nightly ETL jobs run at 2 AM for full data refresh, incremental updates occur every 4 hours during business hours, and real-time feeds update critical metrics continuously. Data quality checks validate completeness before making data available. Check the datamart dashboard for last refresh timestamp and next scheduled update.",
+    domain: "Datamart Tech",
+    keywords: ["data refresh", "etl", "schedule", "updates"],
+    sourceIds: ["datamart-002"]
   },
 ];
 
-export const findBestAnswer = (query: string, tags: string[]): QAPair | null => {
+export function findBestAnswer(query: string, selectedTags: string[] = []): QAPair | null {
   const queryLower = query.toLowerCase();
-  const queryWords = queryLower.split(/\s+/).filter(word => word.length > 3);
   
   // Filter by domain tags if provided
-  let candidates = tags.length > 0 
-    ? trainingData.filter(qa => tags.includes(qa.domain))
+  let candidates = selectedTags.length > 0 
+    ? trainingData.filter(qa => selectedTags.includes(qa.domain))
     : trainingData;
-  
-  // Score each Q&A pair
+
+  // Score each candidate based on keyword matches
   const scored = candidates.map(qa => {
     let score = 0;
     
-    // Exact question match (highest priority)
-    if (qa.question.toLowerCase() === queryLower) {
-      score += 1000;
+    // Check if query matches question closely
+    if (qa.question.toLowerCase().includes(queryLower) || queryLower.includes(qa.question.toLowerCase())) {
+      score += 10;
     }
     
-    // Question similarity
-    const questionWords = qa.question.toLowerCase().split(/\s+/);
-    queryWords.forEach(word => {
-      if (questionWords.some(qw => qw.includes(word) || word.includes(qw))) {
-        score += 50;
+    // Check keyword matches
+    qa.keywords.forEach(keyword => {
+      if (queryLower.includes(keyword.toLowerCase())) {
+        score += 2;
       }
     });
-    
-    // Keyword matching
+
+    // Partial keyword matches
+    const queryWords = queryLower.split(' ');
     qa.keywords.forEach(keyword => {
-      if (queryLower.includes(keyword)) {
-        score += 30;
-      }
       queryWords.forEach(word => {
-        if (keyword.includes(word) || word.includes(keyword)) {
-          score += 20;
+        if (word.length > 3 && keyword.toLowerCase().includes(word)) {
+          score += 1;
         }
       });
     });
-    
-    // Answer content relevance
-    queryWords.forEach(word => {
-      if (qa.answer.toLowerCase().includes(word)) {
-        score += 10;
-      }
-    });
-    
+
     return { qa, score };
   });
-  
-  // Sort by score and return best match
+
+  // Sort by score and return best match if score is high enough
   scored.sort((a, b) => b.score - a.score);
   
-  // Only return if we have a reasonable match
-  return scored[0]?.score > 30 ? scored[0].qa : null;
-};
+  return scored.length > 0 && scored[0].score >= 3 ? scored[0].qa : null;
+}
