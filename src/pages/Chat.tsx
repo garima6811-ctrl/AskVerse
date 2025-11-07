@@ -138,11 +138,18 @@ export default function Chat() {
                 isLoading={isLoading}
               />
               
-              <ChatInput
-                onSendMessage={handleSendMessage}
-                suggestions={[]}
-                disabled={isLoading}
-              />
+              <div className="border-t border-border bg-background px-3 pb-3">
+                <ChatInput
+                  onSendMessage={handleSendMessage}
+                  suggestions={[]}
+                  disabled={isLoading}
+                  availableTags={AVAILABLE_TAGS}
+                  selectedTags={selectedTags}
+                  onTagToggle={handleTagToggle}
+                  contextSuggestions={suggestions}
+                  onSuggestionClick={handleSuggestionClick}
+                />
+              </div>
             </>
           )}
         </div>

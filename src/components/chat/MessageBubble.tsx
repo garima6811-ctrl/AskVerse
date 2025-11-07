@@ -75,7 +75,7 @@ export function MessageBubble({ message }: MessageBubbleProps) {
       <div className={cn("flex-1 space-y-2 min-w-0", isUser && "flex flex-col items-end")}>
         <div className="flex items-center gap-2">
           <span className="font-semibold text-foreground text-sm sm:text-[15px]">
-            {isUser ? 'You' : 'AskAllThingsData'}
+            {isUser ? 'You' : 'Ask All Things Data'}
           </span>
           <span className="text-[10px] sm:text-xs text-muted-foreground font-normal">
             {message.timestamp.toLocaleTimeString()}

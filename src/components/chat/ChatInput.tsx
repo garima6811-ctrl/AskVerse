@@ -1,21 +1,51 @@
 import { useState } from "react";
-import { Send, Paperclip, Mic, Cpu } from "lucide-react";
+import { Send, Paperclip, Mic, Cpu, Image, FileText, Settings2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 import { Suggestion } from "@/types/chat";
 import { SearchOptions, SearchSource } from "./SearchOptions";
+import { TagSelector } from "./TagSelector";
+import { useToast } from "@/hooks/use-toast";
 
 interface ChatInputProps {
   onSendMessage: (content: string, tags: string[]) => void;
   suggestions: Suggestion[];
   disabled?: boolean;
+  availableTags?: string[];
+  selectedTags?: string[];
+  onTagToggle?: (tag: string) => void;
+  contextSuggestions?: Suggestion[];
+  onSuggestionClick?: (text: string) => void;
 }
 
-export function ChatInput({ onSendMessage, suggestions, disabled }: ChatInputProps) {
+export function ChatInput({ 
+  onSendMessage, 
+  suggestions, 
+  disabled,
+  availableTags = [],
+  selectedTags = [],
+  onTagToggle,
+  contextSuggestions = [],
+  onSuggestionClick
+}: ChatInputProps) {
   const [input, setInput] = useState("");
   const [tags, setTags] = useState<string[]>([]);
   const [searchSources, setSearchSources] = useState<SearchSource[]>(["web"]);
+  const { toast } = useToast();
 
   const handleSubmit = () => {
     if (!input.trim()) return;
@@ -39,6 +69,20 @@ export function ChatInput({ onSendMessage, suggestions, disabled }: ChatInputPro
 
   const removeTag = (tag: string) => {
     setTags(tags.filter((t) => t !== tag));
+  };
+
+  const handleUploadImages = () => {
+    toast({
+      title: "Upload Images",
+      description: "Image upload functionality will be available soon.",
+    });
+  };
+
+  const handleUploadFiles = () => {
+    toast({
+      title: "Upload Files",
+      description: "File upload functionality will be available soon.",
+    });
   };
 
   return (
@@ -85,14 +129,27 @@ export function ChatInput({ onSendMessage, suggestions, disabled }: ChatInputPro
           </div>
           
           <div className="flex items-center gap-0.5 sm:gap-1">
-            <Button
-              variant="ghost"
-              size="icon"
-              className="text-muted-foreground hover:text-foreground h-8 w-8 sm:h-9 sm:w-9 hidden sm:flex"
-              onClick={() => addTag("general")}
-            >
-              <Paperclip className="w-4 h-4 sm:w-5 sm:h-5" />
-            </Button>
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="text-muted-foreground hover:text-foreground h-8 w-8 sm:h-9 sm:w-9 hidden sm:flex"
+                >
+                  <Paperclip className="w-4 h-4 sm:w-5 sm:h-5" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="start" className="w-40">
+                <DropdownMenuItem onClick={handleUploadImages}>
+                  <Image className="w-4 h-4 mr-2" />
+                  Images
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={handleUploadFiles}>
+                  <FileText className="w-4 h-4 mr-2" />
+                  Files
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
             <Button
               variant="ghost"
               size="icon"
@@ -100,6 +157,33 @@ export function ChatInput({ onSendMessage, suggestions, disabled }: ChatInputPro
             >
               <Mic className="w-4 h-4 sm:w-5 sm:h-5" />
             </Button>
+            {availableTags.length > 0 && onTagToggle && (
+              <Sheet>
+                <SheetTrigger asChild>
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    className="text-muted-foreground hover:text-foreground h-8 w-8 sm:h-9 sm:w-9"
+                  >
+                    <Settings2 className="w-4 h-4 sm:w-5 sm:h-5" />
+                  </Button>
+                </SheetTrigger>
+                <SheetContent side="right" className="w-[340px] sm:w-[400px]">
+                  <SheetHeader>
+                    <SheetTitle>Contexts & Suggestions</SheetTitle>
+                  </SheetHeader>
+                  <div className="mt-6">
+                    <TagSelector
+                      availableTags={availableTags}
+                      selectedTags={selectedTags}
+                      onTagToggle={onTagToggle}
+                      suggestions={contextSuggestions}
+                      onSuggestionClick={onSuggestionClick || (() => {})}
+                    />
+                  </div>
+                </SheetContent>
+              </Sheet>
+            )}
             <Button
               onClick={handleSubmit}
               disabled={disabled || !input.trim()}

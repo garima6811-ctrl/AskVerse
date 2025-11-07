@@ -31,7 +31,7 @@ export function ChatArea({ messages, isLoading }: ChatAreaProps) {
                 <Loader2 className="w-4 h-4 sm:w-5 sm:h-5 animate-spin" />
               </div>
               <div className="flex-1">
-                <span className="font-semibold text-foreground text-sm sm:text-[15px]">AskAllThingsData</span>
+                <span className="font-semibold text-foreground text-sm sm:text-[15px]">Ask All Things Data</span>
                 <div className="mt-2 text-muted-foreground text-sm sm:text-[15px]">Thinking...</div>
               </div>
             </div>
